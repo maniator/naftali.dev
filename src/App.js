@@ -53,6 +53,7 @@ const CardLink = styled(HeaderLink)`
 const CardList = styled.ul`
   list-style: none;
   display: flex;
+  padding: 0;
   
   li {
     margin: auto;
