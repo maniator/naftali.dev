@@ -1,71 +1,75 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import styled from 'styled-components';
 
-const AppWrapper = styled.div`
-  text-align: center;
-`;
 const AppHeader = styled.div`
-  background-color: #222;
-  height: 150px;
+  background-color: ${(props) => props.backgroundColor};
+  height: 12rempx;
   padding: 20px;
-  color: white;
+  color: ${(props) => props.fontColor};
   margin-bottom: 0rem;
   
   h2 {
     margin: 0;
+    font-size: 3rem;
+  }
+  
+  small {
+    font-size: 1rem;
   }
 `;
-const AppLogo = styled.img`
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-
-  @keyframes App-logo-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+const HeaderLink = styled.a`
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
 `;
 const FlexContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${({flexDirection = 'row'}) => flexDirection};
   flex-wrap: wrap;
   justify-content: center;
+  flex: ${({flex}) => flex};
+  min-height: ${({height}) => height};
 `;
 const FlexItem = styled.div`
-  order: ${(props) => props.order}
-  flex: ${(props) => props.flex}
-  flex-basics: ${(props) => props.flexBasis}
-  flex-shrink: ${(props) => props.flexShrink}
-  flex-grow: ${(props) => props.flexGrow}
-  align-self: ${(props) => props.alignSelf}
+  order: ${(props) => props.order};
+  flex: ${(props) => props.flex};
+  flex-basis: ${(props) => props.flexBasis};
+  flex-shrink: ${(props) => props.flexShrink};
+  flex-grow: ${(props) => props.flexGrow};
+  align-self: ${(props) => props.alignSelf};
 `;
 const Card = styled(FlexItem)`
   border: 1px solid grey;
   border-radius: 5px;
   padding: 2rem;
   margin: 1rem 1rem;
-  min-width: 18rem;
+  text-align: center;
+  min-width: ${({minWidth = 18}) => `${minWidth}rem`};
 `;
-const HeadLink = styled.a`
-  font-weight: bold;
-  display: block;
-  text-decoration: none;
+const CardLink = styled(HeaderLink)`
   padding-bottom: 1rem;
   color: black;
+`;
+const CardList = styled.ul`
+  list-style: none;
+  display: flex;
+  
+  li {
+    margin: auto;
+  }
 `;
 
 class App extends Component {
   render() {
     return (
-      <AppWrapper>
+      <FlexContainer flexDirection="column" height="100vh">
         <AppHeader>
-          <AppLogo src={logo} alt="logo" />
           <h2>Neal Lubin</h2>
-          <small>Software Engineer</small>
+          <small>Consider it dealt with</small>
         </AppHeader>
-        <FlexContainer>
+        <FlexContainer flex="1">
           <Card>
-            <HeadLink href="http://ctrlitall.com">Neal @ Stack Overflow</HeadLink>
+            <CardLink href="http://ctrlitall.com">Neal on Stack Overflow</CardLink>
             
             <p>
               <a href="https://stackoverflow.com/users/561731/neal">
@@ -79,12 +83,24 @@ class App extends Component {
             </p>
           </Card>
           <Card>
-            <HeadLink href="/servable">servable</HeadLink>
+            <CardLink href="/servable">servable</CardLink>
     
             <p>A "simple" observable implementation</p>
           </Card>
         </FlexContainer>
-      </AppWrapper>
+
+        <FlexContainer>
+          <Card flexBasis="100vw">
+            <h3>Where I can be found:</h3>
+            <CardList>
+              <li><CardLink href="http://ctrlitall.com">Neal on Stack Overflow</CardLink></li>
+              <li><CardLink href="https://github.com/maniator">@maniator on github</CardLink></li>
+              <li><CardLink href="https://twitter.com/maniator">@maniator on twitter</CardLink></li>
+              <li><CardLink href="https://www.linkedin.com/in/neallubin/">Neal Lubin on LinkedIn</CardLink></li>
+            </CardList>
+          </Card>
+        </FlexContainer>
+      </FlexContainer>
     );
   }
 }
