@@ -4,7 +4,6 @@ import headerImage from "./images/header.png";
 
 const AppHeader = styled.div`
   position: relative;
-  background-color: ${props => props.backgroundColor};
   color: #fff;
   margin-bottom: 0;
   text-align: center;
@@ -20,7 +19,6 @@ const AppHeader = styled.div`
     line-height: 3rem;
     height: 3rem;
     width: auto;
-    font-family: "Work Sans", sans-serif;
     font-weight: 900;
     font-style: normal;
     margin: 0;
@@ -31,9 +29,9 @@ const AppHeader = styled.div`
       content: ""; /* This is necessary for the pseudo element to work. */
       display: block; /* This will put the pseudo element on its own line. */
       margin: 0 auto; /* This will center the border. */
-      width: 25%; /* Change this to whatever width you want. */
+      width: 20vw; /* Change this to whatever width you want. */
       padding-top: 1rem; /* This creates some space between the element and the border. */
-      border-bottom: 3px solid rgba(79, 255, 150, 0.34); /* This creates the border. Replace black with whatever color you want. */
+      border-bottom: 3px solid #2a7ae2; /* This creates the border. Replace black with whatever color you want. */
     }
   }
   small {
@@ -55,12 +53,26 @@ const AppHeader = styled.div`
     background-position: center;
     z-index: -1;
   }
+
+  @media only screen and (max-width: 600px) {
+    h2 {
+      font-size: 2rem;
+      line-height: 2rem;
+      height: 2rem;
+    }
+  }
 `;
 
 const HeaderLink = styled.a`
-  text-decoration: none;
-  font-weight: bold;
   display: block;
+  padding-bottom: 1rem;
+  text-decoration: none;
+  color: #2a7ae2;
+
+  &:hover {
+    color: black;
+    text-decoration: underline;
+  }
 `;
 const FlexContainer = styled.div`
   display: flex;
@@ -70,7 +82,10 @@ const FlexContainer = styled.div`
   flex: ${({ flex }) => flex};
   min-height: ${({ height }) => height};
 `;
-const Page = styled(FlexContainer)`
+const Page = styled.div`
+  font-family: "Work Sans", sans-serif;
+`;
+const PageInner = styled(FlexContainer)`
   width: 80vw;
   margin: 0 auto;
 `;
@@ -87,86 +102,125 @@ const fadeIn = keyframes`
     to   { opacity: 1; }
 `;
 const Card = styled(FlexItem)`
-  border: 1px solid grey;
   border-radius: 5px;
-  padding: 2rem;
   margin: 1rem 1rem;
   text-align: center;
   min-width: ${({ minWidth = 18 }) => `${minWidth}rem`};
   opacity: 1;
   animation: ${fadeIn} 2s;
 `;
-const CardHeaderLink = styled(HeaderLink)`
-  padding-bottom: 1rem;
-  color: black;
-`;
+
 const CardList = styled.ul`
   list-style: none;
   display: flex;
   padding: 0;
   flex-direction: column;
+  margin-bottom: 0;
 
   li {
     margin: auto;
+    &:last-child {
+      a {
+        padding: 0;
+      }
+    }
   }
+`;
+const CardHeader = styled.h2`
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 20px;
+
+  &:after {
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: ${props =>
+      props.lineWidth || "10vw"}; /* Change this to whatever width you want. */
+    padding-top: 0.5rem; /* This creates some space between the element and the border. */
+    border-bottom: 3px solid #9d9fa2; /* This creates the border. Replace black with whatever color you want. */
+  }
+`;
+
+const CardSmallHeader = styled.h3`
+  font-weight: 500;
+`;
+
+const TypeLogo = styled.i`
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  color: #2a7ae2;
+  margin: 0 4px;
 `;
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <Page>
         <AppHeader>
           <h2>Naftali Lubin</h2>
           <small>Full stack Software Engineer</small>
           <div className="after" />
         </AppHeader>
-        <Page flexDirection="column" height="100vh">
+        <PageInner flexDirection="column" height="100vh">
           <FlexContainer>
             <Card flexBasis="100vw">
-              <h2>Where I can be found:</h2>
+              <CardHeader lineWidth="15vw">Where I can be found</CardHeader>
               <CardList>
                 <li>
-                  <CardHeaderLink href="http://ctrlitall.com">
+                  <HeaderLink href="https://github.com/maniator">
+                    @maniator on Github
+                  </HeaderLink>
+                </li>
+                <li>
+                  <HeaderLink href="http://ctrlitall.com">
                     Neal on Stack Overflow
-                  </CardHeaderLink>
+                  </HeaderLink>
                 </li>
                 <li>
-                  <CardHeaderLink href="https://github.com/maniator">
-                    @maniator on github
-                  </CardHeaderLink>
-                </li>
-                <li>
-                  <CardHeaderLink href="https://www.linkedin.com/in/neallubin/">
+                  <HeaderLink href="https://www.linkedin.com/in/neallubin/">
                     Naftali Lubin on LinkedIn
-                  </CardHeaderLink>
+                  </HeaderLink>
                 </li>
               </CardList>
             </Card>
-          </FlexContainer>
-
-          <FlexContainer>
             <Card flexBasis="100vw">
-              <h2> What do I do? </h2>
+              <CardHeader> What I do </CardHeader>
+
               <div>
-                {" "}
                 I help to build scalable full stack applications with a focus on
                 the frontend.{" "}
               </div>
+            </Card>
+            <Card flexBasis="100vw">
+              <CardHeader lineWidth="13vw"> Technical Skills </CardHeader>
 
-              <h3>Technical Skills</h3>
               <div>
-                <h4>Languages </h4>
-                JavaScript, TypeScript, PHP, MySQL, HTML, CSS, Python, Ruby
+                <CardSmallHeader>Languages </CardSmallHeader>
+
+                <FlexContainer>
+                  <TypeLogo className="devicon-nodejs-plain" />
+                  <TypeLogo className="devicon-typescript-plain" />
+                  <TypeLogo className="devicon-php-plain" />
+                  <TypeLogo className="devicon-html5-plain" />
+                  <TypeLogo className="devicon-mysql-plain" />
+                  <TypeLogo className="devicon-css3-plain" />
+                  <TypeLogo className="devicon-python-plain" />
+                  <TypeLogo className="devicon-ruby-plain" />
+                </FlexContainer>
               </div>
+              <br />
               <div>
-                <h4>Libraries </h4>
+                <CardSmallHeader> Libraries </CardSmallHeader>
                 React, redux, Backbone, Marionette, Angular, Handlebars,
-                flow-typed,lodash, express, NodeJS, django, Symfony, Rails
+                flow-typed, lodash, express, NodeJS, django, Symfony, Rails
               </div>
             </Card>
           </FlexContainer>
-        </Page>
-      </div>
+        </PageInner>
+      </Page>
     );
   }
 }
