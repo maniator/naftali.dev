@@ -295,7 +295,7 @@ class App extends Component {
               <CardHeader>Get in touch</CardHeader>
               <Form
                 method="POST"
-                action="https://formspree.io/naftalilubin@gmail.com"
+                action="https://formspree.io/naftali@lubin.dev"
               >
                 <input type="text" name="name" placeholder="Name" required />
                 <input type="email" name="email" placeholder="Email" required />
