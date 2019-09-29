@@ -91,7 +91,10 @@ const PageInner = styled(FlexContainer)`
   width: 80vw;
   margin: 36px auto;
   background: white;
-  border-radius: 5px;
+
+  @media only screen and (max-width: 600px) {
+    width: 90vw;
+  }
 `;
 const FlexItem = styled.div`
   order: ${props => props.order};
