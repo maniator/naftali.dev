@@ -287,9 +287,24 @@ class App extends Component {
               <br />
               <div>
                 <CardSmallHeader> Libraries </CardSmallHeader>
-                React, redux, Backbone, Marionette, Angular, Handlebars,
-                flow-typed, lodash, express, NodeJS, django, Symfony, Rails
+                React, Redux, Backbone, Marionette, Angular, Handlebars,
+                Flow-typed, Express, Django, Symfony, Rails
               </div>
+            </Card>
+            <Card flexBasis="100vw">
+              <CardHeader>Projects</CardHeader>
+              <CardList>
+                <li>
+                  <HeaderLink href="https://github.com/maniator/servable">
+                    servable - a simple observable
+                  </HeaderLink>
+                </li>
+                <li>
+                  <HeaderLink href="https://github.com/maniator/praetbot">
+                    praetbot - a slackbot built in node
+                  </HeaderLink>
+                </li>
+              </CardList>
             </Card>
             <Card flexBasis="100vw">
               <CardHeader>Get in touch</CardHeader>
