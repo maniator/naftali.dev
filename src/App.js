@@ -29,7 +29,7 @@ const AppHeader = styled.div`
       content: ""; /* This is necessary for the pseudo element to work. */
       display: block; /* This will put the pseudo element on its own line. */
       margin: 0 auto; /* This will center the border. */
-      width: 20vw; /* Change this to whatever width you want. */
+      width: 20%; /* Change this to whatever width you want. */
       padding-top: 1rem; /* This creates some space between the element and the border. */
       border-bottom: 3px solid #2a7ae2; /* This creates the border. Replace black with whatever color you want. */
     }
@@ -136,7 +136,7 @@ const CardHeader = styled.h2`
     display: block; /* This will put the pseudo element on its own line. */
     margin: 0 auto; /* This will center the border. */
     width: ${props =>
-      props.lineWidth || "10vw"}; /* Change this to whatever width you want. */
+      props.lineWidth || "6vw"}; /* Change this to whatever width you want. */
     padding-top: 0.5rem; /* This creates some space between the element and the border. */
     border-bottom: 3px solid #9d9fa2; /* This creates the border. Replace black with whatever color you want. */
   }
@@ -200,6 +200,7 @@ class App extends Component {
               <div>
                 <CardSmallHeader>Languages </CardSmallHeader>
 
+                {/* TODO Put names under all logos (and download the images (svgs) for use on site in the future */}
                 <FlexContainer>
                   <TypeLogo className="devicon-nodejs-plain" />
                   <TypeLogo className="devicon-typescript-plain" />
