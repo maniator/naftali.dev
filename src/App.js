@@ -107,7 +107,7 @@ const fadeIn = keyframes`
 `;
 const Card = styled(FlexItem)`
   border-radius: 5px;
-  margin: 1rem 1rem;
+  margin: 1.5rem 1rem;
   text-align: center;
   min-width: ${({ minWidth = 18 }) => `${minWidth}rem`};
   opacity: 1;
@@ -133,7 +133,7 @@ const CardList = styled.ul`
 const CardHeader = styled.h2`
   text-transform: uppercase;
   font-weight: 700;
-  margin: 0 0 20px;
+  margin: 0 0 1rem;
 
   &:after {
     content: ""; /* This is necessary for the pseudo element to work. */
