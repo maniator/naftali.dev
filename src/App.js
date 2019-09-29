@@ -17,10 +17,10 @@ const AppHeader = styled.div`
     font-size: 3rem;
     line-height: 3rem;
     height: 3rem;
-    width: auto;
+    max-width: 80vw;
     font-weight: 900;
     font-style: normal;
-    margin: 0;
+    margin: 0 auto;
     letter-spacing: 3px;
     filter: none;
 
@@ -36,7 +36,8 @@ const AppHeader = styled.div`
   small {
     font-size: 1.1rem;
     letter-spacing: 2px;
-    margin-top: 2.5rem;
+    max-width: 80vw;
+    margin: 2.5rem auto 0;
   }
 
   .after {
@@ -88,12 +89,12 @@ const Page = styled.div`
   font-family: "Work Sans", sans-serif;
 `;
 const PageInner = styled(FlexContainer)`
-  width: 80vw;
+  max-width: 80vw;
   margin: 36px auto;
   background: white;
 
   @media only screen and (max-width: 600px) {
-    width: 90vw;
+    max-width: 90vw;
   }
 `;
 const FlexItem = styled.div`
