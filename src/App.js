@@ -11,7 +11,6 @@ const AppHeader = styled.div`
   flex-direction: column;
   text-transform: uppercase;
   height: 100vh;
-  display: flex;
   justify-content: center;
 
   h2 {
@@ -29,7 +28,7 @@ const AppHeader = styled.div`
       content: ""; /* This is necessary for the pseudo element to work. */
       display: block; /* This will put the pseudo element on its own line. */
       margin: 0 auto; /* This will center the border. */
-      width: 20%; /* Change this to whatever width you want. */
+      width: 200px; /* Change this to whatever width you want. */
       padding-top: 1rem; /* This creates some space between the element and the border. */
       border-bottom: 3px solid #2a7ae2; /* This creates the border. Replace black with whatever color you want. */
     }
@@ -83,11 +82,16 @@ const FlexContainer = styled.div`
   min-height: ${({ height }) => height};
 `;
 const Page = styled.div`
+  * {
+    box-sizing: content-box;
+  }
   font-family: "Work Sans", sans-serif;
 `;
 const PageInner = styled(FlexContainer)`
   width: 80vw;
-  margin: 0 auto;
+  margin: 36px auto;
+  background: white;
+  border-radius: 5px;
 `;
 const FlexItem = styled.div`
   order: ${props => props.order};
@@ -136,7 +140,7 @@ const CardHeader = styled.h2`
     display: block; /* This will put the pseudo element on its own line. */
     margin: 0 auto; /* This will center the border. */
     width: ${props =>
-      props.lineWidth || "6vw"}; /* Change this to whatever width you want. */
+      props.lineWidth || "150px"}; /* Change this to whatever width you want. */
     padding-top: 0.5rem; /* This creates some space between the element and the border. */
     border-bottom: 3px solid #9d9fa2; /* This creates the border. Replace black with whatever color you want. */
   }
@@ -150,9 +154,49 @@ const TypeLogo = styled.i`
   font-size: 48px;
   width: 48px;
   height: 48px;
-  padding: 8px;
   color: #2a7ae2;
+`;
+
+const TypeLogoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: 0 4px;
+  padding: 8px;
+  font-size: 12px;
+
+  ${TypeLogo} {
+    margin: 0 auto 12px;
+  }
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  input,
+  textarea,
+  button {
+    display: block;
+    width: 300px;
+    margin: 0 auto 8px;
+    border: 1px solid #9d9fa2;
+    height: 24px;
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  textarea {
+    min-height: 44px;
+  }
+
+  button {
+    background-color: #2a7ae2;
+    color: white;
+    width: 150px;
+    margin-bottom: 0;
+  }
 `;
 
 class App extends Component {
@@ -167,7 +211,7 @@ class App extends Component {
         <PageInner flexDirection="column" height="100vh">
           <FlexContainer>
             <Card flexBasis="100vw">
-              <CardHeader lineWidth="15vw">Where I can be found</CardHeader>
+              <CardHeader>Where I can be found</CardHeader>
               <CardList>
                 <li>
                   <HeaderLink href="https://github.com/maniator">
@@ -191,25 +235,53 @@ class App extends Component {
 
               <div>
                 I help to build scalable full stack applications with a focus on
-                the frontend.{" "}
+                the frontend.
               </div>
             </Card>
             <Card flexBasis="100vw">
-              <CardHeader lineWidth="13vw"> Technical Skills </CardHeader>
+              <CardHeader> Technical Skills </CardHeader>
 
               <div>
                 <CardSmallHeader>Languages </CardSmallHeader>
 
                 {/* TODO Put names under all logos (and download the images (svgs) for use on site in the future */}
                 <FlexContainer>
-                  <TypeLogo className="devicon-nodejs-plain" />
-                  <TypeLogo className="devicon-typescript-plain" />
-                  <TypeLogo className="devicon-php-plain" />
-                  <TypeLogo className="devicon-html5-plain" />
-                  <TypeLogo className="devicon-mysql-plain" />
-                  <TypeLogo className="devicon-css3-plain" />
-                  <TypeLogo className="devicon-python-plain" />
-                  <TypeLogo className="devicon-ruby-plain" />
+                  <TypeLogoContainer>
+                    <TypeLogo className="devicon-javascript-plain" />
+                    JavaScript
+                  </TypeLogoContainer>
+                  <TypeLogoContainer>
+                    <TypeLogo className="devicon-nodejs-plain" />
+                    NodeJS
+                  </TypeLogoContainer>
+                  <TypeLogoContainer>
+                    <TypeLogo className="devicon-typescript-plain" />
+                    TypeScript
+                  </TypeLogoContainer>
+                  <TypeLogoContainer>
+                    <TypeLogo className="devicon-html5-plain" />
+                    HTML
+                  </TypeLogoContainer>
+                  <TypeLogoContainer>
+                    <TypeLogo className="devicon-css3-plain" />
+                    CSS
+                  </TypeLogoContainer>
+                  <TypeLogoContainer>
+                    <TypeLogo className="devicon-mysql-plain" />
+                    MySQL
+                  </TypeLogoContainer>
+                  <TypeLogoContainer>
+                    <TypeLogo className="devicon-ruby-plain" />
+                    Ruby
+                  </TypeLogoContainer>
+                  <TypeLogoContainer>
+                    <TypeLogo className="devicon-php-plain" />
+                    PHP
+                  </TypeLogoContainer>
+                  <TypeLogoContainer>
+                    <TypeLogo className="devicon-python-plain" />
+                    Python
+                  </TypeLogoContainer>
                 </FlexContainer>
               </div>
               <br />
@@ -218,6 +290,18 @@ class App extends Component {
                 React, redux, Backbone, Marionette, Angular, Handlebars,
                 flow-typed, lodash, express, NodeJS, django, Symfony, Rails
               </div>
+            </Card>
+            <Card flexBasis="100vw">
+              <CardHeader>Get in touch</CardHeader>
+              <Form
+                method="POST"
+                action="https://formspree.io/naftalilubin@gmail.com"
+              >
+                <input type="text" name="name" placeholder="Name" required />
+                <input type="email" name="email" placeholder="Email" required />
+                <textarea name="message" placeholder="Message" />
+                <button type="submit">Send</button>
+              </Form>
             </Card>
           </FlexContainer>
         </PageInner>
