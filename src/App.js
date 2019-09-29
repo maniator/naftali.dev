@@ -107,7 +107,7 @@ const fadeIn = keyframes`
 `;
 const Card = styled(FlexItem)`
   border-radius: 5px;
-  margin: 1.5rem 1rem;
+  margin: 1.75rem 1rem;
   text-align: center;
   min-width: ${({ minWidth = 18 }) => `${minWidth}rem`};
   opacity: 1;
