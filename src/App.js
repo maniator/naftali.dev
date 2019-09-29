@@ -89,9 +89,8 @@ const Page = styled.div`
   font-family: "Work Sans", sans-serif;
 `;
 const PageInner = styled(FlexContainer)`
-  max-width: 80vw;
+  max-width: 750px;
   margin: 36px auto;
-  background: white;
 
   @media only screen and (max-width: 600px) {
     max-width: 90vw;
