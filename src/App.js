@@ -313,10 +313,15 @@ class App extends Component {
               <CardHeader>Get in touch</CardHeader>
               <Form
                 method="POST"
-                action="https://formspree.io/naftali@lubin.dev"
+                action="https://formspree.io/f/naftali@lubin.dev"
               >
                 <input type="text" name="name" placeholder="Name" required />
-                <input type="email" name="email" placeholder="Email" required />
+                <input
+                  type="email"
+                  name="_replyto"
+                  placeholder="Email"
+                  required
+                />
                 <textarea name="message" placeholder="Message" />
                 <button type="submit">Send</button>
               </Form>
