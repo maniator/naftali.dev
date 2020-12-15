@@ -210,6 +210,13 @@ class App extends Component {
           <h2>Naftali Lubin</h2>
           <small>Full stack Software Engineer</small>
           <div className="after" />
+          <script
+            dangerouslySetInnerHTML={`
+            function onSubmit(token) {
+              document.getElementById("contactForm").submit();
+            }
+          `}
+          />
         </AppHeader>
         <PageInner flexDirection="column" height="100vh">
           <FlexContainer>
@@ -311,7 +318,11 @@ class App extends Component {
             </Card>
             <Card flexBasis="100vw">
               <CardHeader>Get in touch</CardHeader>
-              <Form method="POST" action="https://formspree.io/f/mqkgyjpr">
+              <Form
+                id="contactForm"
+                method="POST"
+                action="https://formspree.io/f/mqkgyjpr"
+              >
                 <input type="text" name="name" placeholder="Name" required />
                 <input type="email" name="email" placeholder="Email" required />
                 <textarea name="message" placeholder="Message" />
