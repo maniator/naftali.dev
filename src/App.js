@@ -315,7 +315,15 @@ class App extends Component {
                 <input type="text" name="name" placeholder="Name" required />
                 <input type="email" name="email" placeholder="Email" required />
                 <textarea name="message" placeholder="Message" />
-                <button type="submit">Send</button>
+                <button
+                  type="submit"
+                  className="g-recaptcha"
+                  data-sitekey="6LcE2QcaAAAAABIudl7lhdkLiUX3FOaLUHvVi9QQ"
+                  data-callback="onSubmit"
+                  data-action="submit"
+                >
+                  Send
+                </button>
               </Form>
             </Card>
           </FlexContainer>
