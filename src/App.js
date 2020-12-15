@@ -311,10 +311,7 @@ class App extends Component {
             </Card>
             <Card flexBasis="100vw">
               <CardHeader>Get in touch</CardHeader>
-              <Form
-                method="POST"
-                action="https://formspree.io/naftali@lubin.dev"
-              >
+              <Form method="POST" action="https://formspree.io/f/mqkgyjpr">
                 <input type="text" name="name" placeholder="Name" required />
                 <input type="email" name="email" placeholder="Email" required />
                 <textarea name="message" placeholder="Message" />
