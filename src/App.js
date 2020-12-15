@@ -211,11 +211,13 @@ class App extends Component {
           <small>Full stack Software Engineer</small>
           <div className="after" />
           <script
-            dangerouslySetInnerHTML={`
+            dangerouslySetInnerHTML={{
+              __html: `
             function onSubmit(token) {
               document.getElementById("contactForm").submit();
             }
-          `}
+          `
+            }}
           />
         </AppHeader>
         <PageInner flexDirection="column" height="100vh">
