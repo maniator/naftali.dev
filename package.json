@@ -6,8 +6,8 @@
     "husky": "^3.0.7",
     "lint-staged": "^9.4.0",
     "prettier": "^1.18.2",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^15.7.0",
+    "react-dom": "^15.7.0",
     "react-scripts": "1.0.10",
     "styled-components": "^2.1.1"
   },
