@@ -10,6 +10,10 @@ function App() {
         <title>Naftali Lubin (@maniator)</title>
         <link rel="preload" href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap" as="style" />
         <link rel="preload" href="//cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" as="style" />
+
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap" />
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
         <link rel="preload" href="//www.google.com/recaptcha/api.js" as="script" />
         <script defer type="text/javascript" src="https://github-profile.com/dist/gh-profile-card.min.js" />
         <script defer src="//www.google.com/recaptcha/api.js" />
