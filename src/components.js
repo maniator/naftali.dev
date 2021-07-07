@@ -135,7 +135,7 @@ export const CardList = styled.ul`
     }
 
     li:last-child {
-      padding: 0;
+      padding-bottom: 0;
     }
   }
 
@@ -147,7 +147,7 @@ export const CardList = styled.ul`
     }
 
     li:last-child {
-      padding: 0;
+      padding-bottom: 0;
     }
   `}
 
