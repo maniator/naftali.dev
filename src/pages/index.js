@@ -8,10 +8,12 @@ function App() {
     <C.Page>
       <Helmet>
         <title>Naftali Lubin (@maniator)</title>
-        <link href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-        <script type="text/javascript" src="https://github-profile.com/dist/gh-profile-card.min.js" />
-        <script src="//www.google.com/recaptcha/api.js" />
+        <link rel="preload" href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap" as="style" />
+        <link rel="preload" href="//cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" as="style" />
+        <link rel="preload" href="//www.google.com/recaptcha/api.js" as="script" />
+        <script defer type="text/javascript" src="https://github-profile.com/dist/gh-profile-card.min.js" />
+        <script defer src="//www.google.com/recaptcha/api.js" />
+        <script dangerouslySetInnerHTML={{__html: `function onSubmit(token) { document.getElementById("contactForm").submit(); }`}} />
       </Helmet>
       <C.AppHeader>
         <h2>Naftali Lubin</h2>
@@ -129,9 +131,9 @@ function App() {
                 height="315"
                 src="https://www.youtube-nocookie.com/embed/dlRWNEN1eew"
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               />
             </li>
             <li>
@@ -140,9 +142,9 @@ function App() {
                 height="315"
                 src="https://www.youtube-nocookie.com/embed/Pmk8yl3O53U"
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               />
             </li>
           </C.CardList>

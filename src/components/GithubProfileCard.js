@@ -19,15 +19,17 @@ const Card = styled.div`
 
 const ProfileCard = () => {
   useEffect(() => {
-    var widget = new global.GitHubCard({
-      username: "maniator",
-      template: "#profile-card",
-      sortBy: "updateTime",
-      maxRepos: 0,
-      hideTopLanguages: true
-    });
-
-    widget.init();
+    if (global.GitHubCard) {
+      let widget = new global.GitHubCard({
+        username: "maniator",
+        template: "#profile-card",
+        sortBy: "updateTime",
+        maxRepos: 0,
+        hideTopLanguages: true
+      });
+  
+      widget.init();
+    }
   }, []);
 
   return (
