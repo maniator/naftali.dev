@@ -1,10 +1,18 @@
 import React from "react";
-import * as C from "./components";
-import GithubProfileCard from "./GithubProfileCard";
+import * as C from "../components";
+import GithubProfileCard from "../components/GithubProfileCard";
+import {Helmet} from "react-helmet";
 
 function App() {
   return (
     <C.Page>
+      <Helmet>
+        <title>Naftali Lubin (@maniator)</title>
+        <link href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+        <script type="text/javascript" src="https://github-profile.com/dist/gh-profile-card.min.js" />
+        <script src="//www.google.com/recaptcha/api.js" />
+      </Helmet>
       <C.AppHeader>
         <h2>Naftali Lubin</h2>
         <small>Full Stack Software Engineer</small>

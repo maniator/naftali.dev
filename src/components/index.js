@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import headerImage from "./images/header.png";
+import headerImage from "../images/header.png";
 
 export const AppHeader = styled.div`
   position: relative;
