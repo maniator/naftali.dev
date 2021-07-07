@@ -125,7 +125,7 @@ export const CardList = styled.ul`
   list-style: none;
   display: flex;
   padding: 0;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: 0;
 
   li {
@@ -133,19 +133,16 @@ export const CardList = styled.ul`
     display: flex;
     align-items: center;
 
-    a {
+    & > * {
       padding: 0;
     }
-  }
-`;
 
-export const CardListVertical = styled(CardList)`
-  flex-direction: column;
-
-  li {
-    a,
-    iframe {
+    & {
       padding: 1rem;
+    }
+
+    &:last-child {
+      padding: 0;
     }
   }
 `;

@@ -95,7 +95,7 @@ function App() {
           </C.Card>
           <C.Card flexBasis="100vw">
             <C.CardHeader>Projects</C.CardHeader>
-            <C.CardListVertical>
+            <C.CardList>
               <li>
                 <C.HeaderLink href="https://github.com/maniator/servable">
                   servable - a simple observable
@@ -111,11 +111,11 @@ function App() {
                   Self playing/talking online baseball game
                 </C.HeaderLink>
               </li>
-            </C.CardListVertical>
+            </C.CardList>
           </C.Card>
           <C.Card flexBasis="100vw">
             <C.CardHeader>Meetup Talks</C.CardHeader>
-            <C.CardListVertical>
+            <C.CardList>
               <li>
                 <iframe
                   width="560"
@@ -138,7 +138,7 @@ function App() {
                   allowfullscreen
                 />
               </li>
-            </C.CardListVertical>
+            </C.CardList>
           </C.Card>
           <C.Card flexBasis="100vw">
             <C.CardHeader>Get in touch</C.CardHeader>
