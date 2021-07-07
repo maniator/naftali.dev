@@ -9,7 +9,7 @@ export const AppHeader = styled.div`
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
-  height: 100vh;
+  height: 50vh;
   justify-content: center;
 
   h2 {
@@ -130,14 +130,23 @@ export const CardList = styled.ul`
 
   li {
     margin: auto;
+    display: flex;
+    align-items: center;
+
+    a {
+      padding: 0;
+    }
   }
 `;
 
 export const CardListVertical = styled(CardList)`
   flex-direction: column;
 
-  li:last-child a {
-    padding: 0;
+  li {
+    a,
+    iframe {
+      padding: 1rem;
+    }
   }
 `;
 
