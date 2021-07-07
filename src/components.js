@@ -10,6 +10,7 @@ export const AppHeader = styled.div`
   flex-direction: column;
   text-transform: uppercase;
   height: 50vh;
+  width: 100%;
   justify-content: center;
 
   h2 {
@@ -78,24 +79,22 @@ export const FlexContainer = styled.div`
   display: flex;
   flex-direction: ${({ flexDirection = "row" }) => flexDirection};
   flex-wrap: wrap;
-  justify-content: center;
   flex: ${({ flex }) => flex};
   min-height: ${({ height }) => height};
+  justify-content: ${({ justifyContent }) => justifyContent};
+  margin: 0 3rem;
+
+  @media only screen and (max-width: 600px) {
+    margin: 0 1rem;
+  }
 `;
 
 export const Page = styled.div`
+  font-family: "Work Sans", sans-serif;
+  width: 100vw;
+
   * {
     box-sizing: content-box;
-  }
-  font-family: "Work Sans", sans-serif;
-`;
-
-export const PageInner = styled(FlexContainer)`
-  max-width: 750px;
-  margin: 36px auto;
-
-  @media only screen and (max-width: 600px) {
-    max-width: 90vw;
   }
 `;
 
@@ -125,8 +124,32 @@ export const CardList = styled.ul`
   list-style: none;
   display: flex;
   padding: 0;
-  flex-direction: column;
+  flex-direction: ${props => props.flexDirection || "row"};
   margin-bottom: 0;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+
+    li {
+      padding: 1rem;
+    }
+
+    li:last-child {
+      padding: 0;
+    }
+  }
+
+  ${props =>
+    props.flexDirection === "column" &&
+    `
+    li {
+      padding: 1rem;
+    }
+
+    li:last-child {
+      padding: 0;
+    }
+  `}
 
   li {
     margin: auto;
@@ -135,14 +158,7 @@ export const CardList = styled.ul`
 
     & > * {
       padding: 0;
-    }
-
-    & {
-      padding: 1rem;
-    }
-
-    &:last-child {
-      padding: 0;
+      max-width: 100%;
     }
   }
 `;
