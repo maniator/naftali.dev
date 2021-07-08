@@ -9,11 +9,11 @@ function Header () {
             query {
                 headerImage: file(relativePath: { eq: "header.png" }) {
                     childImageSharp {
-                    fluid(quality: 90, maxWidth: 2440, maxHeight: 1040) {
-                        ...GatsbyImageSharpFluid
+                        fluid(quality: 90, maxWidth: 2440, maxHeight: 1040) {
+                            ...GatsbyImageSharpFluid
+                        }
                     }
                 }
-            }
             }
         `
     )
@@ -22,7 +22,10 @@ function Header () {
     return (
         <AppHeader
           Tag="header"
-          fluid={imageData}
+          fluid={[
+              "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.55))",
+              imageData,
+          ]}
           title="Naftali Lubin"
           id="header"
           role="img"

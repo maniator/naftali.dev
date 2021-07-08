@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 import BackgroundImage from 'gatsby-background-image'
 
 
-const blue = "#3f6596";
+export const blue = "#3f6596";
 
 export const AppHeader = styled(BackgroundImage)`
   position: relative;
@@ -14,11 +14,7 @@ export const AppHeader = styled(BackgroundImage)`
   text-transform: uppercase;
   height: 50vh;
   width: 100%;
-  justify-content: center;      
-  
-  opacity: 1 !important;
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.55));
-  background-size: cover;
+  justify-content: center;
 
   h2 {
     font-size: 3rem;
