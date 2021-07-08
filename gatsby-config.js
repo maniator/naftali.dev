@@ -29,7 +29,6 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
-    },
-    'gatsby-plugin-no-javascript'
+    }
   ],
 };
