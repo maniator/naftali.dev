@@ -1,6 +1,9 @@
 import styled, { keyframes } from "styled-components";
 import headerImage from "../images/header.png";
 
+
+const blue = "#3f6596";
+
 export const AppHeader = styled.div`
   position: relative;
   color: #fff;
@@ -30,7 +33,7 @@ export const AppHeader = styled.div`
       margin: 0 auto; /* This will center the border. */
       width: 200px; /* Change this to whatever width you want. */
       padding-top: 1rem; /* This creates some space between the element and the border. */
-      border-bottom: 3px solid #2a7ae2; /* This creates the border. Replace black with whatever color you want. */
+      border-bottom: 3px solid ${blue}; /* This creates the border. Replace black with whatever color you want. */
     }
   }
   small {
@@ -67,7 +70,8 @@ export const HeaderLink = styled.a`
   display: block;
   padding-bottom: 1rem;
   text-decoration: none;
-  color: #2a7ae2;
+  color: ${blue};
+  font-weight: 500;
 
   &:hover {
     color: black;
@@ -187,7 +191,7 @@ export const TypeLogo = styled.i`
   font-size: 48px;
   width: 48px;
   height: 48px;
-  color: #2a7ae2;
+  color: ${blue};
 `;
 
 export const TypeLogoContainer = styled.div`
@@ -226,7 +230,7 @@ export const Form = styled.form`
   }
 
   button {
-    background-color: #2a7ae2;
+    background-color: ${blue};
     color: white;
     width: 150px;
     margin-bottom: 0;
