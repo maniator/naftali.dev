@@ -11,7 +11,7 @@ function App() {
       <C.FlexContainer as="main">
         <C.Card flexBasis="100vw">
           <C.CardHeader>Where I can be found</C.CardHeader>
-          <C.CardList>
+          <C.CardList style={{ minHeight: 100 }}>
             <li>
               <GithubProfileCard />
             </li>
