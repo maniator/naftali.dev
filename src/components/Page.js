@@ -1,6 +1,7 @@
 import React from "react";
 import * as C from ".";
 import {Helmet} from "react-helmet";
+import Header from "./Header";
 
 function Page ({ children, title }) {
     return (
@@ -23,11 +24,7 @@ function Page ({ children, title }) {
 
                 <script type="text/javascript" src="//github-profile.com/dist/gh-profile-card.min.js" />
             </Helmet>
-            <C.AppHeader as="header">
-            <h2>Naftali Lubin</h2>
-            <small>Full Stack Software Engineer</small>
-            <div className="after" />
-            </C.AppHeader>
+            <Header />
             {children}
         </C.Page>
     );

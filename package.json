@@ -18,6 +18,8 @@
     "@formspree/react": "^2.2.3",
     "babel-plugin-styled-components": "^1.13.1",
     "gatsby": "^3.8.1",
+    "gatsby-background-image": "^1.5.3",
+    "gatsby-image": "^3.9.0",
     "gatsby-plugin-google-analytics": "^3.9.0",
     "gatsby-plugin-image": "^1.9.0",
     "gatsby-plugin-manifest": "^3.9.0",

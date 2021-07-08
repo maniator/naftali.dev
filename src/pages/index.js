@@ -2,7 +2,8 @@ import React from "react";
 import * as C from "../components";
 import GithubProfileCard from "../components/GithubProfileCard";
 import ContactForm from "../components/ContactForm";
-import Page from "../components/Page"
+import Page from "../components/Page";
+import YoutubeLink from "../components/YoutubeLink";
 
 function App() {
   return (
@@ -112,22 +113,10 @@ function App() {
           <C.CardHeader>Meetup Talks</C.CardHeader>
           <C.CardList flexDirection="column">
             <li>
-              <C.Link href="//youtu.be/dlRWNEN1eew">
-                <img 
-                 src="//i.ytimg.com/vi_webp/dlRWNEN1eew/sddefault.webp"
-                 alt="Let's build our own Observable from nothing to a simple Observable"
-                 title="Let's build our own Observable from nothing to a simple Observable"
-                />
-              </C.Link>
+              <YoutubeLink id="dlRWNEN1eew" title="Let's build our own Observable from nothing to a simple Observable" />
             </li>
             <li>
-              <C.Link href="//youtu.be/Pmk8yl3O53U">
-                <img
-                 src="//i.ytimg.com/vi_webp/Pmk8yl3O53U/sddefault.webp"
-                 alt="Let's build our own Observable"
-                 title="Let's build our own Observable"
-                />
-              </C.Link>
+              <YoutubeLink id="Pmk8yl3O53U" title="Let's build our own Observable" />
             </li>
           </C.CardList>
         </C.Card>

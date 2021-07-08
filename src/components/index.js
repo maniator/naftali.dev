@@ -1,10 +1,10 @@
 import styled, { keyframes } from "styled-components";
-import headerImage from "../images/header.png";
+import BackgroundImage from 'gatsby-background-image'
 
 
 const blue = "#3f6596";
 
-export const AppHeader = styled.div`
+export const AppHeader = styled(BackgroundImage)`
   position: relative;
   color: #fff;
   margin-bottom: 0;
@@ -41,20 +41,6 @@ export const AppHeader = styled.div`
     letter-spacing: 2px;
     max-width: 80vw;
     margin: 2.5rem auto 0;
-  }
-
-  .after {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    filter: blur(2px);
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.55)),
-      url(${headerImage});
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
   }
 
   @media only screen and (max-width: 600px) {
