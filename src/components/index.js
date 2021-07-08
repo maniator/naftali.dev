@@ -14,7 +14,11 @@ export const AppHeader = styled(BackgroundImage)`
   text-transform: uppercase;
   height: 50vh;
   width: 100%;
-  justify-content: center;
+  justify-content: center;      
+  
+  opacity: 1 !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.55));
+  background-size: cover;
 
   h2 {
     font-size: 3rem;
