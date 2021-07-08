@@ -1,31 +1,13 @@
 import React from "react";
 import * as C from "../components";
 import GithubProfileCard from "../components/GithubProfileCard";
-import {Helmet} from "react-helmet";
 import ContactForm from "../components/ContactForm";
+import Page from "../components/Page"
 
 function App() {
   return (
-    <C.Page>
-      <Helmet
-        htmlAttributes={{
-          lang: 'en',
-        }}
-      >
-        <title>Naftali Lubin (@maniator)</title>
-        <meta name="description" content="Naftali Lubin is a Software Engineer in New York" />
-        <link rel="preload" href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap" as="style" />
-        <link rel="preload" href="//cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" as="style" />
-
-        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap" />
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-      </Helmet>
-      <C.AppHeader>
-        <h2>Naftali Lubin</h2>
-        <small>Full Stack Software Engineer</small>
-        <div className="after" />
-      </C.AppHeader>
-      <C.FlexContainer>
+    <Page>
+      <C.FlexContainer as="main">
         <C.Card flexBasis="100vw">
           <C.CardHeader>Where I can be found</C.CardHeader>
           <C.CardList>
@@ -159,7 +141,7 @@ function App() {
           <ContactForm />
         </C.Card>
       </C.FlexContainer>
-    </C.Page>
+    </Page>
   );
 }
 

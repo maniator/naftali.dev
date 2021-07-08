@@ -72,6 +72,7 @@ export const HeaderLink = styled.a`
   text-decoration: none;
   color: ${blue};
   font-weight: 500;
+  cursor: pointer;
 
   &:hover {
     color: black;
