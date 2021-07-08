@@ -10,7 +10,7 @@ function Header () {
                 headerImage: file(relativePath: { eq: "header.png" }) {
                     childImageSharp {
                         fluid(quality: 90, maxWidth: 2440, maxHeight: 1040) {
-                            ...GatsbyImageSharpFluid
+                            ...GatsbyImageSharpFluid_withWebp
                         }
                     }
                 }
