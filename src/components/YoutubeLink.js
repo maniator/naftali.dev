@@ -1,8 +1,9 @@
 import React from "react";
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
-import BackgroundImage from 'gatsby-background-image';
 import * as C from "../components";
+import { getImage } from "gatsby-plugin-image";
+import { BgImage } from "gbimage-bridge";
 
 const imageMap = {
     dlRWNEN1eew: "realLife",
@@ -27,7 +28,7 @@ const Link = styled(C.Link)`
     width: 100%;
 `
 
-const Image = styled(BackgroundImage).attrs({
+const Image = styled(BgImage).attrs({
  Tag: "section"
 })`
     height: 100%;
@@ -40,39 +41,43 @@ const Image = styled(BackgroundImage).attrs({
 `;
 
 function YoutubeLink ({ id, title }) {
-    const data = useStaticQuery(
-        graphql`
-            query {
-                realLife: file(relativePath: { eq: "is_this_real_life.webp" }) {
-                    childImageSharp {
-                        fluid(quality: 90, maxWidth: 2440) {
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
-                    }
-                },
-                observable: file(relativePath: { eq: "observables.webp" }) {
-                    childImageSharp {
-                        fluid(quality: 90, maxWidth: 2440) {
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
-                    }
-                },
-            }
-        `
-    );
+    const data = useStaticQuery(graphql`{
+  realLife: file(relativePath: {eq: "is_this_real_life.webp"}) {
+    childImageSharp {
+        gatsbyImageData(
+            width: 2440
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+        )
+    }
+  }
+  observable: file(relativePath: {eq: "observables.webp"}) {
+    childImageSharp {
+        gatsbyImageData(
+            width: 2440
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+        )
+    }
+  }
+}
+`);
 
-    const imageData = data[imageMap[id]].childImageSharp.fluid;
+    const image = getImage(data[imageMap[id]]);
 
     return (
         <ListItem>
             <Link href={`//youtu.be/${id}`}>
                 <Image
-                    fluid={imageData}
-                    objectFit="contain"
+                    image={image}
+                    loading="eager"
+                    preserveStackingContext
                     alt={title}
                     title={title}
                     fadeIn={`soft`}
-                />
+                    keepStatic
+                >
+                </Image>
             </Link>
         </ListItem>
     );

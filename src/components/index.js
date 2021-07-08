@@ -1,10 +1,9 @@
 import styled, { keyframes } from "styled-components";
-import BackgroundImage from 'gatsby-background-image'
-
+import { BgImage } from "gbimage-bridge"
 
 export const blue = "#3f6596";
 
-export const AppHeader = styled(BackgroundImage)`
+export const AppHeader = styled(BgImage)`
   position: relative;
   color: #fff;
   margin-bottom: 0;

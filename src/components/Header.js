@@ -1,30 +1,31 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-import { AppHeader } from "."
-
+import { graphql, useStaticQuery } from "gatsby";
+import { AppHeader } from ".";
+import { getImage } from "gatsby-plugin-image";
 
 function Header () {
-    const { headerImage } = useStaticQuery(
-        graphql`
-            query {
-                headerImage: file(relativePath: { eq: "header.png" }) {
-                    childImageSharp {
-                        fluid(quality: 90, maxWidth: 2440, maxHeight: 1040) {
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
-                    }
-                }
-            }
-        `
-    );
-    const imageData = headerImage.childImageSharp.fluid
+    const { headerImage } = useStaticQuery(graphql`{
+  headerImage: file(relativePath: {eq: "header.png"}) {
+    childImageSharp {
+        gatsbyImageData(
+            width: 2440
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+        )
+    }
+  }
+}
+`);
+
+    const image = getImage(headerImage);
 
     return (
         <AppHeader
           Tag="header"
-          fluid={[
+          loading="eager"
+          image={[
               "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.55))",
-              imageData,
+              image,
           ]}
           title="Naftali Lubin"
           id="header"
