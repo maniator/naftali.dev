@@ -19,10 +19,8 @@ const Card = styled.div`
 
 const ProfileCard = () => {
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      async function loadProfileCard () {
-        await import("github-profile-card");
-
+    if (typeof window !== "undefined" && global.GitHubCard) {
+      function loadProfileCard () {
         let widget = new global.GitHubCard({
           username: "maniator",
           template: "#profile-card",

@@ -30,5 +30,6 @@ module.exports = {
       },
       __key: "images",
     },
+    'gatsby-plugin-no-javascript'
   ],
 };
