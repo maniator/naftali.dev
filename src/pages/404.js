@@ -15,7 +15,7 @@ const NotFoundPage = () => {
                 Try creating a page in &nbsp;<code>src/pages/</code>
               </li>
             ) : null}
-            <li><C.HeaderLink as={Link} to="/">Go home</C.HeaderLink></li>
+            <li><C.Link as={Link} to="/">Go home</C.Link></li>
           </C.CardList>
         </C.Card>
       </C.FlexContainer>

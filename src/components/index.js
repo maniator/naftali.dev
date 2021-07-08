@@ -66,7 +66,9 @@ export const AppHeader = styled.div`
   }
 `;
 
-export const HeaderLink = styled.a`
+export const Link = styled.a.attrs({
+  target: "blank"
+})`
   display: block;
   padding-bottom: 1rem;
   text-decoration: none;

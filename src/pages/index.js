@@ -15,7 +15,7 @@ function App() {
               <GithubProfileCard />
             </li>
             <li>
-              <C.HeaderLink href="http://ctrlitall.com">
+              <C.Link href="http://ctrlitall.com">
                 <img
                   src="https://stackexchange.com/users/flair/271284.png?theme=clean"
                   width="208"
@@ -23,7 +23,7 @@ function App() {
                   alt="profile for Naftali aka Neal on Stack Exchange, a network of free, community-driven Q&amp;A sites"
                   title="profile for Naftali aka Neal on Stack Exchange, a network of free, community-driven Q&amp;A sites"
                 />
-              </C.HeaderLink>
+              </C.Link>
             </li>
           </C.CardList>
         </C.Card>
@@ -42,7 +42,6 @@ function App() {
           <div>
             <C.CardSmallHeader>Languages</C.CardSmallHeader>
 
-            {/* TODO Put names under all logos (and download the images (svgs) for use on site in the future */}
             <C.FlexContainer justifyContent="center">
               <C.TypeLogoContainer>
                 <C.TypeLogo className="devicon-javascript-plain" />
@@ -93,19 +92,19 @@ function App() {
           <C.CardHeader>Projects</C.CardHeader>
           <C.CardList flexDirection="column">
             <li>
-              <C.HeaderLink href="https://github.com/maniator/servable">
+              <C.Link href="//github.com/maniator/servable">
                 servable - a simple observable
-              </C.HeaderLink>
+              </C.Link>
             </li>
             <li>
-              <C.HeaderLink href="https://github.com/maniator/praetbot">
+              <C.Link href="//github.com/maniator/praetbot">
                 praetbot - a slackbot built in node
-              </C.HeaderLink>
+              </C.Link>
             </li>
             <li>
-              <C.HeaderLink href="https://blipit.net">
+              <C.Link href="//blipit.net">
                 Self playing/talking online baseball game
-              </C.HeaderLink>
+              </C.Link>
             </li>
           </C.CardList>
         </C.Card>
@@ -113,26 +112,22 @@ function App() {
           <C.CardHeader>Meetup Talks</C.CardHeader>
           <C.CardList flexDirection="column">
             <li>
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube-nocookie.com/embed/dlRWNEN1eew"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              <C.Link href="//youtu.be/dlRWNEN1eew">
+                <img 
+                 src="//i.ytimg.com/vi_webp/dlRWNEN1eew/sddefault.webp"
+                 alt="Let's build our own Observable from nothing to a simple Observable"
+                 title="Let's build our own Observable from nothing to a simple Observable"
+                />
+              </C.Link>
             </li>
             <li>
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube-nocookie.com/embed/Pmk8yl3O53U"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              <C.Link href="//youtu.be/Pmk8yl3O53U">
+                <img
+                 src="//i.ytimg.com/vi_webp/Pmk8yl3O53U/sddefault.webp"
+                 alt="Let's build our own Observable"
+                 title="Let's build our own Observable"
+                />
+              </C.Link>
             </li>
           </C.CardList>
         </C.Card>
