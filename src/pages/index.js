@@ -2,6 +2,7 @@ import React from "react";
 import * as C from "../components";
 import GithubProfileCard from "../components/GithubProfileCard";
 import {Helmet} from "react-helmet";
+import ContactForm from "../components/ContactForm";
 
 function App() {
   return (
@@ -155,24 +156,7 @@ function App() {
         </C.Card>
         <C.Card flexBasis="100vw">
           <C.CardHeader>Get in touch</C.CardHeader>
-          <C.Form
-            id="contactForm"
-            method="POST"
-            action="https://formspree.io/f/mqkgyjpr"
-          >
-            <input type="text" name="name" placeholder="Name" required />
-            <input type="email" name="email" placeholder="Email" required />
-            <textarea name="message" placeholder="Message" />
-            <button
-              type="submit"
-              className="g-recaptcha"
-              data-sitekey="6LcE2QcaAAAAABIudl7lhdkLiUX3FOaLUHvVi9QQ"
-              data-callback="onSubmit"
-              data-action="submit"
-            >
-              Send
-            </button>
-          </C.Form>
+          <ContactForm />
         </C.Card>
       </C.FlexContainer>
     </C.Page>

@@ -218,6 +218,7 @@ export const Form = styled.form`
     height: 24px;
     padding: 8px 16px;
     font-size: 16px;
+    font: inherit;
   }
 
   textarea {
