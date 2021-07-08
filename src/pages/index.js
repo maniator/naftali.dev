@@ -112,12 +112,8 @@ function App() {
         <C.Card flexBasis="100vw">
           <C.CardHeader>Meetup Talks</C.CardHeader>
           <C.CardList flexDirection="column">
-            <li>
-              <YoutubeLink id="dlRWNEN1eew" title="Let's build our own Observable from nothing to a simple Observable" />
-            </li>
-            <li>
-              <YoutubeLink id="Pmk8yl3O53U" title="Let's build our own Observable" />
-            </li>
+            <YoutubeLink id="dlRWNEN1eew" title="Let's build our own Observable from nothing to a simple Observable" />
+            <YoutubeLink id="Pmk8yl3O53U" title="Let's build our own Observable" />
           </C.CardList>
         </C.Card>
         <C.Card flexBasis="100vw">

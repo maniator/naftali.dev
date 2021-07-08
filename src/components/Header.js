@@ -16,7 +16,7 @@ function Header () {
                 }
             }
         `
-    )
+    );
     const imageData = headerImage.childImageSharp.fluid
 
     return (

@@ -200,12 +200,15 @@ export const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  position: relative;
+  width: 100%;
 
   input,
   textarea,
   button {
     display: block;
-    width: 300px;
+    width: 265px;
+    max-width: 100%;
     margin: 0 auto 8px;
     border: 1px solid #9d9fa2;
     height: 24px;
@@ -222,6 +225,7 @@ export const Form = styled.form`
     background-color: ${blue};
     color: white;
     width: 150px;
+    max-width: 100%;
     margin-bottom: 0;
   }
 `;

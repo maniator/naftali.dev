@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Card = styled.div`
@@ -18,23 +18,37 @@ const Card = styled.div`
 `;
 
 const ProfileCard = () => {
-  useEffect(() => {
-    if (typeof window !== "undefined" && global.GitHubCard) {
-      function loadProfileCard () {
-        let widget = new global.GitHubCard({
-          username: "maniator",
-          template: "#profile-card",
-          sortBy: "updateTime",
-          maxRepos: 0,
-          hideTopLanguages: true
-        });
-    
-        widget.init();
-      }
+  const [cardApiLoaded, setCardApiLoaded] = useState(false);
 
-      loadProfileCard();
+  useEffect(() => {
+    let timer;
+    if (typeof window !== "undefined") {
+      timer = global.setInterval(() => {
+        if (global.GitHubCard) {
+          global.clearInterval(timer);
+          setCardApiLoaded(true);
+        }
+      }, 500);
     }
-  }, []);
+
+    return () => {
+      global.clearInterval(timer)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && cardApiLoaded) {
+      let widget = new global.GitHubCard({
+        username: "maniator",
+        template: "#profile-card",
+        sortBy: "updateTime",
+        maxRepos: 0,
+        hideTopLanguages: true
+      });
+  
+      widget.init();
+    }
+  }, [cardApiLoaded]);
 
   return (
     <Card>

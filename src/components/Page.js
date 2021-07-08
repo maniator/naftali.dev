@@ -22,7 +22,7 @@ function Page ({ children, title }) {
                 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap" />
                 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
-                <script type="text/javascript" src="//github-profile.com/dist/gh-profile-card.min.js" />
+                <script defer type="text/javascript" src="//github-profile.com/dist/gh-profile-card.min.js" />
             </Helmet>
             <Header />
             {children}
