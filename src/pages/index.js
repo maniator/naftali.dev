@@ -11,11 +11,11 @@ function App() {
       <C.FlexContainer as="main">
         <C.Card flexBasis="100vw">
           <C.CardHeader>Where I can be found</C.CardHeader>
-          <C.CardList style={{ minHeight: 100 }}>
-            <li>
+          <C.CardList>
+            <li style={{ minHeight: 100 }}>
               <GithubProfileCard />
             </li>
-            <li>
+            <li style={{ minHeight: 100 }}>
               <C.Link href="http://ctrlitall.com">
                 <img
                   src="https://stackexchange.com/users/flair/271284.png?theme=clean"
