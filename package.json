@@ -7,6 +7,9 @@
   "keywords": [
     "gatsby"
   ],
+  "engines": {
+    "node": "^16.5.0"
+  },
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
@@ -28,11 +31,15 @@
     "gatsby-plugin-sitemap": "^4.5.0",
     "gatsby-plugin-styled-components": "^4.9.0",
     "gatsby-source-filesystem": "^3.9.0",
+    "gatsby-transformer-remark": "^4.7.0",
     "gatsby-transformer-sharp": "^3.9.0",
     "gbimage-bridge": "^0.1.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0"
   }
 }
