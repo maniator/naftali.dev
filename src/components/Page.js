@@ -13,7 +13,7 @@ function Page ({ children, title }) {
             >
                 <title>{ title ? title : "Naftali Lubin (@maniator)" }</title>
                 <meta name="description" content="Naftali Lubin is a Software Engineer in New York" />
-                <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+                <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
 
                 <link rel="preload" href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap" as="style" />
                 <link rel="preload" href="//cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" as="style" />
