@@ -6,8 +6,6 @@ import Page from "../components/Page";
 export default function BlogPost({data}) {
     const post = data.markdownRemark;
 
-    console.log({post})
-
     return (
         <Page>
             <C.FlexContainer as="main">
