@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import * as C from "../components";
-import Page from "../components/Page";
+import Page from "../../components/Page";
+import * as C from "../../components";
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark;
@@ -19,12 +19,14 @@ export default function BlogPost({ data }) {
   );
 }
 export const query = graphql`
-  query BlogQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query ($id: String!) {
+    markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
-        title
         date(fromNow: true)
+        path
+        title
+        tags
       }
     }
   }

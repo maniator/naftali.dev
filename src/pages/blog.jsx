@@ -13,7 +13,7 @@ export default function Blog({ data }) {
           <C.CardHeader>Posts</C.CardHeader>
           {posts.map((post) => (
             <article key={post.id}>
-              <C.Link to={post.fields.slug} as={Link} $paddingBottom="0">
+              <C.Link to={post.frontmatter.path} as={Link} $paddingBottom="0">
                 {post.frontmatter.title}
               </C.Link>
               <small>{post.frontmatter.date}</small>
@@ -30,12 +30,10 @@ export const pageQuery = graphql`
     blog: allMarkdownRemark {
       posts: nodes {
         id
-        fields {
-          slug
-        }
         frontmatter {
           date(fromNow: true)
           title
+          path
         }
       }
     }
