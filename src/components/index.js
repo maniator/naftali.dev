@@ -1,7 +1,36 @@
-import styled, { keyframes } from "styled-components";
-import { BgImage } from "gbimage-bridge"
+import styled, { keyframes, css } from "styled-components";
+import { BgImage } from "gbimage-bridge";
+import { Link as GLink } from "gatsby";
 
 export const blue = "#3f6596";
+const fadeIn = keyframes`
+    from { opacity: 0; }
+    to   { opacity: 1; }
+`;
+
+export const HeaderNavLink = styled(GLink)`
+  font-size: 3rem;
+  line-height: 3rem;
+  height: 3rem;
+  max-width: 80vw;
+  font-weight: 900;
+  font-style: normal;
+  margin: 0 auto;
+  letter-spacing: 3px;
+  filter: none;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+
+  &:after {
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 200px; /* Change this to whatever width you want. */
+    padding-top: 1rem; /* This creates some space between the element and the border. */
+    border-bottom: 3px solid ${blue}; /* This creates the border. Replace black with whatever color you want. */
+  }
+`;
 
 export const AppHeader = styled(BgImage)`
   position: relative;
@@ -15,26 +44,6 @@ export const AppHeader = styled(BgImage)`
   width: 100%;
   justify-content: center;
 
-  h2 {
-    font-size: 3rem;
-    line-height: 3rem;
-    height: 3rem;
-    max-width: 80vw;
-    font-weight: 900;
-    font-style: normal;
-    margin: 0 auto;
-    letter-spacing: 3px;
-    filter: none;
-
-    &:after {
-      content: ""; /* This is necessary for the pseudo element to work. */
-      display: block; /* This will put the pseudo element on its own line. */
-      margin: 0 auto; /* This will center the border. */
-      width: 200px; /* Change this to whatever width you want. */
-      padding-top: 1rem; /* This creates some space between the element and the border. */
-      border-bottom: 3px solid ${blue}; /* This creates the border. Replace black with whatever color you want. */
-    }
-  }
   small {
     font-size: 1.1rem;
     letter-spacing: 2px;
@@ -52,10 +61,10 @@ export const AppHeader = styled(BgImage)`
 `;
 
 export const Link = styled.a.attrs({
-  target: "blank"
+  target: "blank",
 })`
   display: block;
-  padding-bottom: 1rem;
+  padding-bottom: ${({ $paddingBottom }) => $paddingBottom || "1rem"};
   text-decoration: none;
   color: ${blue};
   font-weight: 500;
@@ -91,32 +100,50 @@ export const Page = styled.div`
 `;
 
 export const FlexItem = styled.div`
-  order: ${props => props.order};
-  flex: ${props => props.flex};
-  flex-basis: ${props => props.flexBasis};
-  flex-shrink: ${props => props.flexShrink};
-  flex-grow: ${props => props.flexGrow};
-  align-self: ${props => props.alignSelf};
+  order: ${(props) => props.order};
+  flex: ${(props) => props.flex};
+  flex-basis: ${(props) => props.flexBasis};
+  flex-shrink: ${(props) => props.flexShrink};
+  flex-grow: ${(props) => props.flexGrow};
+  align-self: ${(props) => props.alignSelf};
 `;
 
-const fadeIn = keyframes`
-    from { opacity: 0; }
-    to   { opacity: 1; }
+export const CardHeader = styled.h2`
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 1rem;
+
+  &:after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: ${({ lineWidth }) => lineWidth || "150px"};
+    padding-top: 0.5rem;
+    border-bottom: 3px solid #9d9fa2;
+  }
 `;
 export const Card = styled(FlexItem)`
   border-radius: 5px;
   margin: 1.75rem 1rem;
-  text-align: center;
+  ${({ centered = true }) => centered && `text-align: center;`}
   min-width: ${({ minWidth = 18 }) => `${minWidth}rem`};
   opacity: 1;
   animation: ${fadeIn} 2s;
+
+  ${({ centered = true }) =>
+    !centered &&
+    css`
+      ${CardHeader}:after {
+        margin: 0;
+      }
+    `}
 `;
 
 export const CardList = styled.ul`
   list-style: none;
   display: flex;
   padding: 0;
-  flex-direction: ${props => props.flexDirection || "row"};
+  flex-direction: ${(props) => props.flexDirection || "row"};
   margin-bottom: 0;
 
   @media only screen and (max-width: 600px) {
@@ -131,7 +158,7 @@ export const CardList = styled.ul`
     }
   }
 
-  ${props =>
+  ${(props) =>
     props.flexDirection === "column" &&
     `
     li {
@@ -155,23 +182,11 @@ export const CardList = styled.ul`
   }
 `;
 
-export const CardHeader = styled.h2`
-  text-transform: uppercase;
-  font-weight: 700;
-  margin: 0 0 1rem;
-
-  &:after {
-    content: ""; /* This is necessary for the pseudo element to work. */
-    display: block; /* This will put the pseudo element on its own line. */
-    margin: 0 auto; /* This will center the border. */
-    width: ${props =>
-      props.lineWidth || "150px"}; /* Change this to whatever width you want. */
-    padding-top: 0.5rem; /* This creates some space between the element and the border. */
-    border-bottom: 3px solid #9d9fa2; /* This creates the border. Replace black with whatever color you want. */
-  }
+export const CardSmallHeader = styled.h3`
+  font-weight: 500;
 `;
 
-export const CardSmallHeader = styled.h3`
+export const SmallHeader = styled.small`
   font-weight: 500;
 `;
 

@@ -32,9 +32,9 @@ const ProfileCard = () => {
     }
 
     return () => {
-      global.clearInterval(timer)
-    }
-  }, [])
+      global.clearInterval(timer);
+    };
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined" && cardApiLoaded) {
@@ -43,9 +43,9 @@ const ProfileCard = () => {
         template: "#profile-card",
         sortBy: "updateTime",
         maxRepos: 0,
-        hideTopLanguages: true
+        hideTopLanguages: true,
       });
-  
+
       widget.init();
     }
   }, [cardApiLoaded]);

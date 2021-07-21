@@ -41,7 +41,7 @@ function App() {
           <C.CardHeader> Technical Skills </C.CardHeader>
 
           <div>
-            <C.CardSmallHeader>Languages</C.CardSmallHeader>
+            <C.CardSmallHeader> Languages </C.CardSmallHeader>
 
             <C.FlexContainer justifyContent="center">
               <C.TypeLogoContainer>
@@ -112,8 +112,14 @@ function App() {
         <C.Card flexBasis="100vw">
           <C.CardHeader>Meetup Talks</C.CardHeader>
           <C.CardList flexDirection="column">
-            <YoutubeLink id="dlRWNEN1eew" title="Let's build our own Observable from nothing to a simple Observable" />
-            <YoutubeLink id="Pmk8yl3O53U" title="Let's build our own Observable" />
+            <YoutubeLink
+              id="dlRWNEN1eew"
+              title="Let's build our own Observable from nothing to a simple Observable"
+            />
+            <YoutubeLink
+              id="Pmk8yl3O53U"
+              title="Let's build our own Observable"
+            />
           </C.CardList>
         </C.Card>
         <C.Card flexBasis="100vw">
