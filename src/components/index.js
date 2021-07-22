@@ -11,7 +11,7 @@ const fadeIn = keyframes`
 export const HeaderNavLink = styled(GLink)`
   font-size: 3rem;
   line-height: 3rem;
-  height: 3rem;
+  min-height: 3rem;
   max-width: 80vw;
   font-weight: 900;
   font-style: normal;
