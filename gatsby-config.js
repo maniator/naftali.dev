@@ -9,7 +9,15 @@ module.exports = {
     title: pageTitle,
     titleTemplate: `%s · ${pageTitle}`,
     siteUrl,
-    description: "Naftali Lubin is a Software Engineer in New York",
+    description: `
+Naftali Lubin is a Software Engineer in New York
+who builds scalable full stack web applications
+with over 10 years of experience
+
+Father of three amazing boys
+
+Husband of one incredible wife
+    `.trim(),
     twitterUsername: "@maniator",
     image: "/images/rubber_ball.jpeg",
   },
@@ -74,6 +82,19 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-classes`,
+            options: {
+              classMap: {
+                "heading[depth=1]": "title",
+                "heading[depth=2]": "subtitle",
+                paragraph: "paragraph",
+                "list[ordered=false]": "list",
+                "list[ordered=true]": "numbered-list",
+                listItem: "list-item",
+              },
+            },
+          },
         ],
       },
     },

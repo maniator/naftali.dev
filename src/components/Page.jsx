@@ -2,14 +2,8 @@ import React from "react";
 import * as C from ".";
 import { Helmet } from "react-helmet";
 import Header from "./Header";
-import { createGlobalStyle } from "styled-components";
 import SEO from "./SEO";
-
-const GlobalStyles = createGlobalStyle`
-  body {
-    margin: 0;
-  }
-`;
+import GlobalStyles from "./GlobalStyles";
 
 function Page({ children, ...props }) {
   return (

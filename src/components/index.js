@@ -184,6 +184,7 @@ export const CardList = styled.ul`
 
 export const CardSmallHeader = styled.h3`
   font-weight: 500;
+  margin: 1rem 0;
 `;
 
 export const SmallHeader = styled.small`

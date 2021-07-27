@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from "react";
+import { fontSize } from "../GlobalStyles";
 
 const PostElement = styled.div`
   .gatsby-highlight-code-line {
@@ -41,5 +42,8 @@ const PostElement = styled.div`
 `;
 
 export const Post = ({ html }) => (
-  <PostElement dangerouslySetInnerHTML={{ __html: html }} />
+  <PostElement
+    className="blog-post"
+    dangerouslySetInnerHTML={{ __html: html }}
+  />
 );
