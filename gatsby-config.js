@@ -1,7 +1,17 @@
+const pageTitle = "Naftali Lubin (@maniator)";
+const siteUrl =
+  process.env.APP_ENV === "development"
+    ? "http://localhost:8000"
+    : "https://naftali.lubin.dev";
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://naftali.lubin.dev",
-    title: "Naftali Lubin (@maniator)",
+    title: pageTitle,
+    titleTemplate: `%s · ${pageTitle}`,
+    siteUrl,
+    description: "Naftali Lubin is a Software Engineer in New York",
+    twitterUsername: "@maniator",
+    image: "/images/rubber_ball.jpeg",
   },
   plugins: [
     "gatsby-plugin-catch-links",
@@ -16,9 +26,15 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `naftalilubin`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/rubber_ball.jpeg",
+        icon: "static/images/rubber_ball.jpeg",
       },
     },
     "gatsby-plugin-sharp",

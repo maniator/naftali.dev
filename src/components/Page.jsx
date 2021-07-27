@@ -3,6 +3,7 @@ import * as C from ".";
 import { Helmet } from "react-helmet";
 import Header from "./Header";
 import { createGlobalStyle } from "styled-components";
+import SEO from "./SEO";
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -10,16 +11,12 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-function Page({ children, title }) {
+function Page({ children, ...props }) {
   return (
     <C.Page>
       <GlobalStyles />
-      <Helmet htmlAttributes={{ lang: "en" }}>
-        <title>{title ? title : "Naftali Lubin (@maniator)"}</title>
-        <meta
-          name="description"
-          content="Naftali Lubin is a Software Engineer in New York"
-        />
+      <SEO {...props} />
+      <Helmet>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
 
         <link

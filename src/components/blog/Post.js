@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import React from "react";
 
-export const Post = styled.div`
+const PostElement = styled.div`
   .gatsby-highlight-code-line {
     background-color: #feb;
     display: block;
@@ -38,3 +39,7 @@ export const Post = styled.div`
     overflow: initial;
   }
 `;
+
+export const Post = ({ html }) => (
+  <PostElement dangerouslySetInnerHTML={{ __html: html }} />
+);
