@@ -14,6 +14,7 @@ export default function BlogPost({ data }) {
     markdownRemark: {
       id: postId,
       html: postHtml,
+      excerpt: postExcerpt,
       frontmatter: { title: postTitle, date: postDate, originalDate },
     },
     site: {
@@ -24,6 +25,7 @@ export default function BlogPost({ data }) {
   return (
     <Page
       title={postTitle}
+      description={postExcerpt}
       pageType="article"
       footer={<Footer siteUrl={siteUrl} postId={postId} />}
     >
@@ -47,6 +49,7 @@ export const query = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      excerpt
       frontmatter {
         date(fromNow: true)
         originalDate: date
