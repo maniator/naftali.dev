@@ -8,6 +8,7 @@ import {
   StyledPost,
 } from "../../components/blog/components";
 import Footer from "../../components/blog/Footer";
+import { CardHeader } from "../../components";
 
 export default function BlogPost({ data }) {
   const {
@@ -30,8 +31,10 @@ export default function BlogPost({ data }) {
       footer={<Footer siteUrl={siteUrl} postId={postId} />}
     >
       <StyledPost>
-        <PostHeader as="header">
-          <h2 itemProp="headline">{postTitle}</h2>
+        <PostHeader>
+          <CardHeader as="h2" itemProp="headline">
+            {postTitle}
+          </CardHeader>
           <PostDate title={originalDate}>{postDate}</PostDate>
         </PostHeader>
         <Post html={postHtml} />

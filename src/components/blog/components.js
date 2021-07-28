@@ -12,6 +12,10 @@ export const PostHeader = styled.header`
   position: relative;
   grid-area: title;
   width: 100%;
+
+  ${CardHeader}:after {
+    margin: 0;
+  }
 `;
 
 export const PostPreview = styled.article.attrs({
