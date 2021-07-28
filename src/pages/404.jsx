@@ -6,7 +6,7 @@ import Page from "../components/Page";
 const NotFoundPage = () => {
   return (
     <Page title="404 - Not Found">
-      <C.FlexContainer as="main">
+      <C.FlexContainer>
         <C.Card flexBasis="100vw">
           <C.CardHeader>Page not found</C.CardHeader>
           <C.CardList flexDirection="column">

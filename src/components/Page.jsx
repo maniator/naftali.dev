@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import Header from "./Header";
 import SEO from "./SEO";
 import GlobalStyles from "./GlobalStyles";
-import ContactForm from "./ContactForm";
+import { Link } from "gatsby";
 
 function Page({ children, footer, ...props }) {
   return (
@@ -49,12 +49,30 @@ function Page({ children, footer, ...props }) {
       <C.Main>{children}</C.Main>
 
       <C.Footer>
-        {footer || (
-          <>
-            <C.CardHeader>Get in touch</C.CardHeader>
-            <ContactForm />
-          </>
-        )}
+        {footer}
+        <hr />
+        <C.CardList>
+          <C.CardListItem>
+            <C.Link to="/" as={Link}>
+              Home
+            </C.Link>
+          </C.CardListItem>
+          <C.CardListItem>
+            <C.Link to="/contact" as={Link}>
+              Contact
+            </C.Link>
+          </C.CardListItem>
+          <C.CardListItem>
+            <C.Link to="/blog" as={Link}>
+              Blog
+            </C.Link>
+          </C.CardListItem>
+          <C.CardListItem>
+            <C.Link to="/#projects" as={Link}>
+              Recent Projects
+            </C.Link>
+          </C.CardListItem>
+        </C.CardList>
       </C.Footer>
     </C.Page>
   );

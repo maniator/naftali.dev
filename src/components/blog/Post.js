@@ -3,6 +3,13 @@ import React from "react";
 
 const PostElement = styled.section`
   grid-area: content;
+  max-width: 100%;
+  position: relative;
+
+  [class*="gatsby"] {
+    max-width: 100%;
+    position: relative;
+  }
 
   .gatsby-highlight-code-line {
     background-color: #feb;

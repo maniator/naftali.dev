@@ -41,8 +41,6 @@ export const AppHeader = styled(BgImage)`
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
-  height: 50vh;
-  width: 100%;
   justify-content: center;
   grid-area: pageHeader;
 
@@ -85,26 +83,36 @@ export const FlexContainer = styled.div`
   flex: ${({ flex }) => flex};
   min-height: ${({ height }) => height};
   justify-content: ${({ justifyContent }) => justifyContent};
-  margin: 0 3rem;
-
-  @media only screen and (max-width: 600px) {
-    margin: 0 1rem;
-  }
+  margin: 0;
 `;
 
 export const Page = styled.div`
   max-width: 100vw;
   display: grid;
+  position: relative;
+  min-height: 100vh;
+
+  grid-template-rows: 20px calc(50vh - 20px) 20px auto 20px auto 20px;
+  grid-template-columns: 20px auto 20px;
 
   grid-template-areas:
-    "pageHeader"
-    "pageContent"
-    "pageFooter";
+    "pageHeader pageHeader pageHeader"
+    "pageHeader pageHeader pageHeader"
+    ". . ."
+    ". pageContent ."
+    ". . ."
+    ". pageFooter .";
+
+  @media only screen and (max-width: 600px) {
+    grid-template-rows: 10px calc(40vh - 10px) 10px auto 10px auto 10px;
+    grid-template-columns: 10px calc(100vw - 20px) 10px;
+  }
 `;
 
 export const Main = styled.main`
   position: relative;
   grid-area: pageContent;
+  max-width: 100%;
 `;
 
 export const FlexItem = styled.div`
@@ -135,9 +143,8 @@ export const CardHeader = styled.h2`
 `;
 export const Card = styled(FlexItem)`
   border-radius: 5px;
-  margin: 1.75rem 1rem;
+  margin: 20px 0;
   ${({ centered = true }) => centered && `text-align: center;`}
-  min-width: ${({ minWidth = 18 }) => `${minWidth}rem`};
   opacity: 1;
   animation: ${fadeIn} 2s;
 
@@ -260,13 +267,17 @@ export const Footer = styled(Card).attrs({
   flexBasis: "100vw",
 })`
   grid-area: pageFooter;
-  margin: 0 20px 20px;
+  bottom: 0;
+  margin: 0 0 1rem;
 
-  &:before {
-    content: "";
+  hr {
     display: block;
     width: 90vw;
-    margin: 1rem auto 2rem;
-    border-bottom: 3px solid ${grey};
+    margin: 1rem auto 1rem;
+    background: none;
+    border-color: ${grey};
+    border-width: 3px;
+    border-style: solid;
+    height: 0;
   }
 `;

@@ -4,10 +4,14 @@ import { Link as GLink } from "gatsby";
 
 export const PostsContainer = styled.div`
   display: grid;
+  grid-template-columns: 1fr;
+`;
 
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  margin: 20px;
+export const PostHeader = styled.header`
+  margin: 0;
+  position: relative;
+  grid-area: title;
+  width: 100%;
 `;
 
 export const PostPreview = styled.article.attrs({
@@ -15,8 +19,13 @@ export const PostPreview = styled.article.attrs({
   itemType: "http://schema.org/Article",
 })`
   display: grid;
-  grid-template-columns: 16px 1fr 20px 2fr 16px;
-  grid-template-areas: ". title . content .";
+  grid-template-columns: 1fr;
+  grid-template-rows: 16px auto 20px auto 16px;
+
+  ${PostHeader} {
+    grid-column: initial;
+    grid-row: 2;
+  }
 `;
 
 export const StyledPost = styled.article.attrs({
@@ -24,10 +33,9 @@ export const StyledPost = styled.article.attrs({
   itemType: "http://schema.org/Article",
 })`
   display: grid;
-  margin: 20px;
-  max-width: 100vw;
-  overflow: hidden;
+  position: relative;
   grid-template-rows: 20px auto 10px auto 10px auto 20px;
+  grid-template-columns: 95vw;
   grid-template-areas:
     "."
     "title"
@@ -37,11 +45,6 @@ export const StyledPost = styled.article.attrs({
     "comment";
 `;
 
-export const PostHeader = styled.header`
-  margin: 0;
-  position: relative;
-  grid-area: title;
-`;
 export const PostLink = styled(CardHeader).attrs({
   as: GLink,
   itemProp: "url",
@@ -68,10 +71,10 @@ export const PostLink = styled(CardHeader).attrs({
 export const PostDate = styled.h5``;
 export const PostExcerpt = styled.main`
   margin: 0;
-  position: relative;
-  grid-area: content;
+  grid-column: initial;
+  grid-row: 4;
 `;
 
-export const PostComments = styled.footer`
+export const PostComments = styled.div`
   grid-area: comment;
 `;

@@ -7,7 +7,7 @@ import YoutubeLink from "../components/YoutubeLink";
 function App() {
   return (
     <Page>
-      <C.FlexContainer as="main">
+      <C.FlexContainer>
         <C.Card flexBasis="100vw">
           <C.CardHeader>Where I can be found</C.CardHeader>
           <C.CardList>
@@ -88,7 +88,7 @@ function App() {
             Backbone, Marionette
           </div>
         </C.Card>
-        <C.Card flexBasis="100vw">
+        <C.Card flexBasis="100vw" id="projects">
           <C.CardHeader>Projects</C.CardHeader>
           <C.CardList flexDirection="column">
             <C.CardListItem>
