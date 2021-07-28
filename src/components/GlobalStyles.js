@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
   
   body {
     font-size: ${fontSize}px;
+    font-family: "Work Sans", sans-serif;
   }
   
   h1 {
@@ -21,9 +22,13 @@ const GlobalStyles = createGlobalStyle`
   h3 {
     font-size: ${fontSize * 1.25}px;
   }
-  
+
   h4 {
     font-size: ${fontSize}px;
+  }
+  
+  h5 {
+    font-size: ${fontSize * 0.75}px;
   }
 
   .paragraph {

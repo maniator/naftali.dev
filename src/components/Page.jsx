@@ -4,8 +4,9 @@ import { Helmet } from "react-helmet";
 import Header from "./Header";
 import SEO from "./SEO";
 import GlobalStyles from "./GlobalStyles";
+import ContactForm from "./ContactForm";
 
-function Page({ children, ...props }) {
+function Page({ children, footer, ...props }) {
   return (
     <C.Page>
       <GlobalStyles />
@@ -45,7 +46,16 @@ function Page({ children, ...props }) {
         />
       </Helmet>
       <Header />
-      {children}
+      <C.Main>{children}</C.Main>
+
+      <C.Footer>
+        {footer || (
+          <>
+            <C.CardHeader>Get in touch</C.CardHeader>
+            <ContactForm />
+          </>
+        )}
+      </C.Footer>
     </C.Page>
   );
 }

@@ -3,6 +3,7 @@ import { BgImage } from "gbimage-bridge";
 import { Link as GLink } from "gatsby";
 
 export const blue = "#3f6596";
+export const grey = "#9d9fa2";
 const fadeIn = keyframes`
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -43,6 +44,7 @@ export const AppHeader = styled(BgImage)`
   height: 50vh;
   width: 100%;
   justify-content: center;
+  grid-area: pageHeader;
 
   small {
     font-size: 1.1rem;
@@ -91,12 +93,18 @@ export const FlexContainer = styled.div`
 `;
 
 export const Page = styled.div`
-  font-family: "Work Sans", sans-serif;
-  width: 100vw;
+  max-width: 100vw;
+  display: grid;
 
-  * {
-    box-sizing: content-box;
-  }
+  grid-template-areas:
+    "pageHeader"
+    "pageContent"
+    "pageFooter";
+`;
+
+export const Main = styled.main`
+  position: relative;
+  grid-area: pageContent;
 `;
 
 export const FlexItem = styled.div`
@@ -112,6 +120,9 @@ export const CardHeader = styled.h2`
   text-transform: uppercase;
   font-weight: 700;
   margin: 0 0 1rem;
+  display: block;
+  color: black;
+  text-decoration: none;
 
   &:after {
     content: "";
@@ -119,7 +130,7 @@ export const CardHeader = styled.h2`
     margin: 0 auto;
     width: ${({ lineWidth }) => lineWidth || "150px"};
     padding-top: 0.5rem;
-    border-bottom: 3px solid #9d9fa2;
+    border-bottom: 3px solid ${grey};
   }
 `;
 export const Card = styled(FlexItem)`
@@ -139,47 +150,48 @@ export const Card = styled(FlexItem)`
     `}
 `;
 
+export const CardListItem = styled.li`
+  margin: auto;
+  display: flex;
+  align-items: center;
+
+  & > * {
+    padding: 0;
+    max-width: 100%;
+  }
+`;
+
 export const CardList = styled.ul`
   list-style: none;
   display: flex;
   padding: 0;
   flex-direction: ${(props) => props.flexDirection || "row"};
   margin-bottom: 0;
+  align-items: center;
 
   @media only screen and (max-width: 600px) {
     flex-direction: column;
 
-    li {
+    ${CardListItem} {
       padding: 1rem;
     }
 
-    li:last-child {
+    ${CardListItem}:last-child {
       padding-bottom: 0;
     }
   }
 
   ${(props) =>
     props.flexDirection === "column" &&
-    `
-    li {
-      padding: 1rem;
-    }
+    css`
+      ${CardListItem} {
+        padding: 1rem;
+      }
 
-    li:last-child {
-      padding-bottom: 0;
-    }
-  `}
-
-  li {
-    margin: auto;
-    display: flex;
-    align-items: center;
-
-    & > * {
-      padding: 0;
-      max-width: 100%;
-    }
-  }
+      ${CardListItem}:last-child {
+        padding-bottom: 0;
+      }
+    `}
 `;
 
 export const CardSmallHeader = styled.h3`
@@ -225,11 +237,9 @@ export const Form = styled.form`
     width: 265px;
     max-width: 100%;
     margin: 0 auto 8px;
-    border: 1px solid #9d9fa2;
-    height: 24px;
+    border: 1px solid ${grey};
     padding: 8px 16px;
-    font-size: 16px;
-    font: inherit;
+    font-family: inherit;
   }
 
   textarea {
@@ -242,5 +252,21 @@ export const Form = styled.form`
     width: 150px;
     max-width: 100%;
     margin-bottom: 0;
+  }
+`;
+
+export const Footer = styled(Card).attrs({
+  as: "footer",
+  flexBasis: "100vw",
+})`
+  grid-area: pageFooter;
+  margin: 0 20px 20px;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 90vw;
+    margin: 1rem auto 2rem;
+    border-bottom: 3px solid ${grey};
   }
 `;

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import React from "react";
-import { fontSize } from "../GlobalStyles";
 
-const PostElement = styled.div`
+const PostElement = styled.section`
+  grid-area: content;
+
   .gatsby-highlight-code-line {
     background-color: #feb;
     display: block;

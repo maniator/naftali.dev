@@ -10,11 +10,12 @@ const imageMap = {
   Pmk8yl3O53U: "observable",
 };
 
-const ListItem = styled.li`
+const ListItem = styled(C.CardListItem)`
   width: calc(50vw - 20px);
   height: calc(50vh - 20px);
   margin: 10px;
   position: relative;
+  text-align: center;
 
   @media only screen and (max-width: 600px) {
     height: calc(30vh - 20px);

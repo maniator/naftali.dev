@@ -1,7 +1,6 @@
 import React from "react";
 import * as C from "../components";
 import GithubProfileCard from "../components/GithubProfileCard";
-import ContactForm from "../components/ContactForm";
 import Page from "../components/Page";
 import YoutubeLink from "../components/YoutubeLink";
 
@@ -12,10 +11,10 @@ function App() {
         <C.Card flexBasis="100vw">
           <C.CardHeader>Where I can be found</C.CardHeader>
           <C.CardList>
-            <li style={{ minHeight: 100 }}>
+            <C.CardListItem style={{ minHeight: 100 }}>
               <GithubProfileCard />
-            </li>
-            <li style={{ minHeight: 100 }}>
+            </C.CardListItem>
+            <C.CardListItem style={{ minHeight: 100 }}>
               <C.Link href="http://ctrlitall.com">
                 <img
                   src="https://stackexchange.com/users/flair/271284.png?theme=clean"
@@ -25,7 +24,7 @@ function App() {
                   title="profile for Naftali aka Neal on Stack Exchange, a network of free, community-driven Q&amp;A sites"
                 />
               </C.Link>
-            </li>
+            </C.CardListItem>
           </C.CardList>
         </C.Card>
         <C.Card flexBasis="100vw">
@@ -92,21 +91,21 @@ function App() {
         <C.Card flexBasis="100vw">
           <C.CardHeader>Projects</C.CardHeader>
           <C.CardList flexDirection="column">
-            <li>
+            <C.CardListItem>
               <C.Link href="//github.com/maniator/servable">
                 servable - a simple observable
               </C.Link>
-            </li>
-            <li>
+            </C.CardListItem>
+            <C.CardListItem>
               <C.Link href="//github.com/maniator/praetbot">
                 praetbot - a slackbot built in node
               </C.Link>
-            </li>
-            <li>
+            </C.CardListItem>
+            <C.CardListItem>
               <C.Link href="//blipit.net">
                 Self playing/talking online baseball game
               </C.Link>
-            </li>
+            </C.CardListItem>
           </C.CardList>
         </C.Card>
         <C.Card flexBasis="100vw">
@@ -121,10 +120,6 @@ function App() {
               title="Let's build our own Observable"
             />
           </C.CardList>
-        </C.Card>
-        <C.Card flexBasis="100vw">
-          <C.CardHeader>Get in touch</C.CardHeader>
-          <ContactForm />
         </C.Card>
       </C.FlexContainer>
     </Page>

@@ -1,37 +1,80 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Page from "../components/Page";
-import * as C from "../components";
+import {
+  PostPreview,
+  PostDate,
+  PostExcerpt,
+  PostHeader,
+  PostLink,
+  PostsContainer,
+} from "../components/blog/components";
+import Footer from "../components/blog/Footer";
 
-export default function Blog({ data }) {
-  const { posts } = data.blog;
+const BlogIndex = ({ data }) => {
+  const {
+    blog: { posts },
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  } = data;
 
   return (
-    <Page>
-      <C.FlexContainer as="main">
-        <C.Card flexBasis="100vw" centered={false}>
-          <C.CardHeader>Posts</C.CardHeader>
-          {posts.map((post) => (
-            <article key={post.id}>
-              <C.Link to={post.frontmatter.path} as={Link} $paddingBottom="0">
-                {post.frontmatter.title}
-              </C.Link>
-              <small>{post.frontmatter.date}</small>
-            </article>
-          ))}
-        </C.Card>
-      </C.FlexContainer>
+    <Page
+      title="All Posts"
+      footer={<Footer siteUrl={siteUrl} postId="allPosts" />}
+    >
+      <PostsContainer>
+        {posts.map((post) => {
+          const title = post.frontmatter.title;
+
+          return (
+            <PostPreview key={post.id} className="post-list-item">
+              <PostHeader as="header">
+                <PostLink
+                  as={Link}
+                  to={post.frontmatter.path}
+                  itemProp="url"
+                  $paddingBottom="none"
+                >
+                  <h2 itemProp="headline">{title}</h2>
+                </PostLink>
+                <PostDate title={post.frontmatter.originalDate}>
+                  {post.frontmatter.date}
+                </PostDate>
+              </PostHeader>
+              <PostExcerpt
+                dangerouslySetInnerHTML={{
+                  __html: post.excerpt,
+                }}
+                itemProp="description"
+              />
+            </PostPreview>
+          );
+        })}
+      </PostsContainer>
     </Page>
   );
-}
+};
+
+export default BlogIndex;
 
 export const pageQuery = graphql`
-  query MyQuery {
-    blog: allMarkdownRemark {
+  query {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+    blog: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       posts: nodes {
         id
+        excerpt
         frontmatter {
           date(fromNow: true)
+          originalDate: date
           title
           path
         }
