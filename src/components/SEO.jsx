@@ -18,7 +18,7 @@ const SEO = ({ title, description, image, pageType }) => {
   } = site.siteMetadata;
 
   const seo = {
-    title: title ? `${title} · ${defaultTitle}` : defaultTitle,
+    title: title && titleTemplate.replace("%s", title),
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
@@ -29,7 +29,6 @@ const SEO = ({ title, description, image, pageType }) => {
     <Helmet
       title={seo.title}
       defaultTitle={defaultTitle}
-      titleTemplate={titleTemplate}
       htmlAttributes={{ lang: "en" }}
     >
       <meta name="description" content={seo.description} />
