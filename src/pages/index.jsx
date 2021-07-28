@@ -17,7 +17,7 @@ function App() {
             <C.CardListItem style={{ minHeight: 100 }}>
               <C.Link href="http://ctrlitall.com">
                 <img
-                  src="https://stackexchange.com/users/flair/271284.png?theme=clean"
+                  src="//stackoverflow.com/users/flair/561731.png?theme=clean"
                   width="208"
                   height="58"
                   alt="profile for Naftali aka Neal on Stack Exchange, a network of free, community-driven Q&amp;A sites"
