@@ -16,4 +16,4 @@ const Footer = ({ postId, siteUrl }) => {
   );
 };
 
-export default Footer;
+export default () => null;
