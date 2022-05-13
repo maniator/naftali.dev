@@ -32,6 +32,15 @@ const plugins = [
       },
     },
   },
+  {
+    resolve: "gatsby-plugin-google-tagmanager",
+    options: {
+      id: "GTM-TBLCVT8",
+      includeInDevelopment: false,
+      defaultDataLayer: { platform: "gatsby" },
+      enableWebVitalsTracking: true,
+    },
+  },
   "gatsby-plugin-react-helmet",
   "gatsby-plugin-sitemap",
   {
