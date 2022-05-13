@@ -24,21 +24,14 @@ const plugins = [
       // You can add multiple tracking ids and a pageview event will be fired for all of them.
       trackingIds: [
         "G-BVXGW4V2JT", // Google Analytics / GA
+        "GTM-TBLCVT8", // GTM
       ],
       // This object is used for configuration specific to this plugin
       pluginConfig: {
         // Setting this parameter is also optional
         respectDNT: true,
+        enableWebVitalsTracking: true,
       },
-    },
-  },
-  {
-    resolve: "gatsby-plugin-google-tagmanager",
-    options: {
-      id: "GTM-TBLCVT8",
-      includeInDevelopment: false,
-      defaultDataLayer: { platform: "gatsby" },
-      enableWebVitalsTracking: true,
     },
   },
   "gatsby-plugin-react-helmet",
