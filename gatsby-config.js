@@ -19,9 +19,17 @@ const plugins = [
   "gatsby-plugin-styled-components",
   "gatsby-plugin-image",
   {
-    resolve: "gatsby-plugin-google-analytics",
+    resolve: "gatsby-plugin-google-gtag",
     options: {
-      trackingId: "G-BVXGW4V2JT",
+      // You can add multiple tracking ids and a pageview event will be fired for all of them.
+      trackingIds: [
+        "G-BVXGW4V2JT", // Google Analytics / GA
+      ],
+      // This object is used for configuration specific to this plugin
+      pluginConfig: {
+        // Setting this parameter is also optional
+        respectDNT: true,
+      },
     },
   },
   "gatsby-plugin-react-helmet",
