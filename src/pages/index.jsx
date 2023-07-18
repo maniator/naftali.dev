@@ -15,7 +15,7 @@ function App() {
               <GithubProfileCard />
             </C.CardListItem>
             <C.CardListItem style={{ minHeight: 100 }}>
-              <C.Link href="http://ctrlitall.com">
+              <C.Link href="//stackoverflow.com/users/561731/naftali">
                 <img
                   src="//stackoverflow.com/users/flair/561731.png?theme=clean"
                   width="208"
