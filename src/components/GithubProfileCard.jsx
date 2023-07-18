@@ -3,8 +3,8 @@ import React from "react";
 const ProfileCard = () => {
   return (
     <>
-      <div className="github-card" data-user="maniator" data-width="400" data-height="318" data-theme="medium" />
-      <script src="//cdn.jsdelivr.net/gh/lepture/github-cards@latest/jsdelivr/widget.js" />
+      <div className="github-card" data-user="maniator" />
+      <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js" />
     </>
   );
 };
