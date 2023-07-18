@@ -24,11 +24,6 @@ function Page({ children, footer, ...props }) {
           href="//cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
           as="style"
         />
-        <link
-          rel="preload"
-          href="//github-profile.com/dist/gh-profile-card.min.js"
-          as="script"
-        />
 
         <link
           rel="stylesheet"
@@ -37,12 +32,6 @@ function Page({ children, footer, ...props }) {
         <link
           rel="stylesheet"
           href="//cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-        />
-
-        <script
-          defer
-          type="text/javascript"
-          src="//github-profile.com/dist/gh-profile-card.min.js"
         />
       </Helmet>
       <Header />

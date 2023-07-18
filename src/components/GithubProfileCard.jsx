@@ -1,59 +1,11 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-
-const Card = styled.div`
-  .repos {
-    display: none;
-  }
-
-  .error {
-    visibility: hidden;
-
-    &::after {
-      content: "@maniator on Github";
-      display: block;
-      visibility: initial;
-    }
-  }
-`;
+import React from "react";
 
 const ProfileCard = () => {
-  const [cardApiLoaded, setCardApiLoaded] = useState(false);
-
-  useEffect(() => {
-    let timer;
-    if (typeof window !== "undefined") {
-      timer = global.setInterval(() => {
-        if (global.GitHubCard) {
-          global.clearInterval(timer);
-          setCardApiLoaded(true);
-        }
-      }, 500);
-    }
-
-    return () => {
-      global.clearInterval(timer);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && cardApiLoaded) {
-      let widget = new global.GitHubCard({
-        username: "maniator",
-        template: "#profile-card",
-        sortBy: "updateTime",
-        maxRepos: 0,
-        hideTopLanguages: true,
-      });
-
-      widget.init();
-    }
-  }, [cardApiLoaded]);
-
   return (
-    <Card>
-      <div id="profile-card" />
-    </Card>
+    <>
+      <div className="github-card" data-user="maniator" />
+      <script src="//cdn.jsdelivr.net/gh/lepture/github-cards@latest/jsdelivr/widget.js" />
+    </>
   );
 };
 
