@@ -123,11 +123,9 @@ module.exports = {
     description: `
 Naftali Lubin is a Software Engineer in New York
 who builds scalable full stack web applications
-with over 10 years of experience
+with over 13 years of experience
 
 Father of three amazing boys
-
-Husband of one incredible wife
     `.trim(),
     twitterUsername: "@maniator",
     image: "/images/rubber_ball.jpeg",

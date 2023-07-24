@@ -6,8 +6,6 @@ tags: ["welcome"]
 ---
 
 I build scalable full stack web applications
-with over 10 years of experience
+with over 13 years of experience
 
 Father of three amazing boys
-
-Husband of one incredible wife

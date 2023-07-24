@@ -34,7 +34,6 @@ function App() {
             I build scalable full stack web applications
           </div>
           <div className="paragraph">Father of three amazing boys</div>
-          <div className="paragraph">Husband of one incredible wife</div>
         </C.Card>
         <C.Card flexBasis="100vw">
           <C.CardHeader> Technical Skills </C.CardHeader>
