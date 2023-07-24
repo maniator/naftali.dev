@@ -30,7 +30,6 @@ const plugins = [
       pluginConfig: {
         // Setting this parameter is also optional
         respectDNT: true,
-        enableWebVitalsTracking: true,
       },
     },
   },
