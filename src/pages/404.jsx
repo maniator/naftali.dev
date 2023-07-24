@@ -7,9 +7,9 @@ const NotFoundPage = () => {
   return (
     <Page title="404 - Not Found">
       <C.FlexContainer>
-        <C.Card flexBasis="100vw">
+        <C.Card $flexBasis="100vw">
           <C.CardHeader>Page not found</C.CardHeader>
-          <C.CardList flexDirection="column">
+          <C.CardList $flexDirection="column">
             {process.env.NODE_ENV === "development" ? (
               <li>
                 Try creating a page in &nbsp;<code>src/pages/</code>

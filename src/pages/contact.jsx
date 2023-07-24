@@ -6,7 +6,7 @@ import Page from "../components/Page";
 const ContactPage = () => (
   <Page>
     <C.FlexContainer>
-      <C.Card flexBasis="100vw">
+      <C.Card $flexBasis="100vw">
         <C.CardHeader>Get in touch</C.CardHeader>
         <ContactForm />
       </C.Card>

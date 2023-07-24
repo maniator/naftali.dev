@@ -7,8 +7,8 @@ import YoutubeLink from "../components/YoutubeLink";
 function App() {
   return (
     <Page>
-      <C.FlexContainer>
-        <C.Card flexBasis="100vw">
+      <C.FlexContainer $flexDirection="column">
+        <C.Card $flexBasis="100vw">
           <C.CardHeader>Where I can be found</C.CardHeader>
           <C.CardList>
             <C.CardListItem style={{ minHeight: 100 }}>
@@ -27,7 +27,7 @@ function App() {
             </C.CardListItem>
           </C.CardList>
         </C.Card>
-        <C.Card flexBasis="100vw">
+        <C.Card $flexBasis="100vw">
           <C.CardHeader> What I do </C.CardHeader>
 
           <div className="paragraph">
@@ -35,13 +35,13 @@ function App() {
           </div>
           <div className="paragraph">Father of three amazing boys</div>
         </C.Card>
-        <C.Card flexBasis="100vw">
+        <C.Card $flexBasis="100vw">
           <C.CardHeader> Technical Skills </C.CardHeader>
 
           <div>
             <C.CardSmallHeader> Languages </C.CardSmallHeader>
 
-            <C.FlexContainer justifyContent="center">
+            <C.FlexContainer $justifyContent="center">
               <C.TypeLogoContainer>
                 <C.TypeLogo className="devicon-javascript-plain" />
                 JavaScript
@@ -87,9 +87,9 @@ function App() {
             Backbone, Marionette
           </div>
         </C.Card>
-        <C.Card flexBasis="100vw" id="projects">
+        <C.Card $flexBasis="100vw" id="projects">
           <C.CardHeader>Projects</C.CardHeader>
-          <C.CardList flexDirection="column">
+          <C.CardList $flexDirection="column">
             <C.CardListItem>
               <C.Link href="//github.com/maniator/servable">
                 servable - a simple observable
@@ -107,9 +107,9 @@ function App() {
             </C.CardListItem>
           </C.CardList>
         </C.Card>
-        <C.Card flexBasis="100vw">
+        <C.Card $flexBasis="100vw">
           <C.CardHeader>Meetup Talks</C.CardHeader>
-          <C.CardList flexDirection="column">
+          <C.CardList $flexDirection="column">
             <YoutubeLink
               id="dlRWNEN1eew"
               title="Let's build our own Observable from nothing to a simple Observable"

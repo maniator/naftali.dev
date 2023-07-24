@@ -38,7 +38,6 @@ function Page({ children, footer, ...props }) {
           rel="stylesheet"
           href="//cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
-        <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js" />
       </Helmet>
       <Header />
       <C.Main>{children}</C.Main>

@@ -78,11 +78,11 @@ export const Link = styled.a.attrs({
 
 export const FlexContainer = styled.div`
   display: flex;
-  flex-direction: ${({ flexDirection = "row" }) => flexDirection};
+  flex-direction: ${({ $flexDirection = "row" }) => $flexDirection};
   flex-wrap: wrap;
   flex: ${({ flex }) => flex};
   min-height: ${({ height }) => height};
-  justify-content: ${({ justifyContent }) => justifyContent};
+  justify-content: ${({ $justifyContent }) => $justifyContent};
   margin: 0;
 `;
 
@@ -118,10 +118,10 @@ export const Main = styled.main`
 export const FlexItem = styled.div`
   order: ${(props) => props.order};
   flex: ${(props) => props.flex};
-  flex-basis: ${(props) => props.flexBasis};
-  flex-shrink: ${(props) => props.flexShrink};
-  flex-grow: ${(props) => props.flexGrow};
-  align-self: ${(props) => props.alignSelf};
+  flex-basis: ${(props) => props.$$flexBasis};
+  flex-shrink: ${(props) => props.$flexShrink};
+  flex-grow: ${(props) => props.$flexGrow};
+  align-self: ${(props) => props.$alignSelf};
 `;
 
 export const CardHeader = styled.h2`
@@ -172,7 +172,7 @@ export const CardList = styled.ul`
   list-style: none;
   display: flex;
   padding: 0;
-  flex-direction: ${(props) => props.flexDirection || "row"};
+  flex-direction: ${(props) => props.$flexDirection || "row"};
   margin-bottom: 0;
   align-items: center;
 
@@ -189,7 +189,7 @@ export const CardList = styled.ul`
   }
 
   ${(props) =>
-    props.flexDirection === "column" &&
+    props.$flexDirection === "column" &&
     css`
       ${CardListItem} {
         padding: 1rem;
@@ -264,7 +264,7 @@ export const Form = styled.form`
 
 export const Footer = styled(Card).attrs({
   as: "footer",
-  flexBasis: "100vw",
+  $flexBasis: "100vw",
 })`
   grid-area: pageFooter;
   bottom: 0;
